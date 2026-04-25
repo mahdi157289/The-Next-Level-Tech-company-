@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "brand": "The Next Level Tech Company",
+    "services": "Services",
+    "about": "À propos",
+    "blog": "Blog",
+    "help": "Aide",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "startNow": "Commencer"
+  },
+  "hero": {
+    "title": "Réinventez votre entreprise, Innovez audacieusement, Montez plus haut, Renforcez le succès",
+    "acronymTitle": "Orienter votre vision|Soutenir vos équipes|Élargir vos horizons|Réinventer vos solutions",
+    "tagline": "OSÉR au niveau supérieur . . .",
+    "description": "Entrez dans un monde où vos idées deviennent réalité. Des sites web élégants aux applications puissantes et aux solutions de données intelligentes, nous offrons des options flexibles pour chaque vision. Construisons, innovons et grandissons ensemble—votre prochain niveau commence ici.",
+    "ctaPrimary": "Commencer",
+    "ctaSecondary": "Explorer"
+  },
+  "footer": {
+    "newsletterTitle": "Restez curieux. Restez connecté.",
+    "newsletterDescription": "Recevez les dernières informations technologiques, histoires et mises à jour—rejoignez notre communauté tournée vers l'avenir.",
+    "emailPlaceholder": "Email",
+    "subscribe": "S'abonner",
+    "subscribedMessage": "Bienvenue ! Vous faites officiellement partie de l'avenir.",
+    "policyText": "Lisez notre <policy>politique</policy> pour en savoir plus.",
+    "copyright": "© 2025 Next Level Tech Company",
+    "madeBy": "Fait par Taylor Brooks"
+  },
+  "services": {
+    "title": "Explorez ce qui est possible",
+    "groups": {
+      "development": "Services de Développement",
+      "data": "Services de Données",
+      "marketing": "Services de Marketing"
+    },
+    "websiteCreation": {
+      "title": "Création de site web",
+      "description": "Lancez votre vision avec un site web qui correspond à votre style—choisissez parmi des versions statiques, standard ou avancées. Nous vous guiderons à chaque étape, rendant le processus simple et excitant.",
+      "imageAlt": "image d'un client interagissant avec du contenu numérique"
+    },
+    "appDevelopment": {
+      "title": "Développement d'applications",
+      "description": "Transformez vos idées en réalité avec des applications personnalisées. Que vous ayez besoin d'un prototype de base ou d'une solution riche en fonctionnalités, nous créons des expériences fluides pour chaque utilisateur.",
+      "imageAlt": "image d'une session de brainstorming d'équipe",
+      "highlight1": "Prototypage rapide et MVP",
+      "highlight2": "Architecture évolutive et API",
+      "highlight3": "Expériences multiplateformes",
+      "highlight4": "Performance et accessibilité"
+    },
+    "dataOrganization": {
+      "title": "Organisation des données",
+      "description": "Donnez du sens à vos données avec clarté. Nous organisons, structurons et rationalisons vos informations, afin que vous puissiez vous concentrer sur ce qui compte et grandir en toute confiance.",
+      "imageAlt": "image de technologie futuriste"
+    },
+    "analyticsSolutions": {
+      "title": "Solutions d'analyse",
+      "description": "Découvrez l'histoire derrière vos chiffres. Nos analyses transforment les données brutes en insights, vous aidant à repérer les tendances, saisir les opportunités et planifier votre prochaine étape.",
+      "imageAlt": "image d'un affichage de gadgets technologiques populaires"
+    },
+    "marketingAI": {
+      "title": "Agents Marketing IA",
+      "description": "Boostez votre portée avec un engagement automatisé 24/7. Nos agents IA optimisent les publicités, adaptent le contenu et interagissent instantanément avec les clients.",
+      "imageAlt": "visualisation du marketing par réseau neuronal ia"
+    },
+    "marketingHuman": {
+      "title": "Marketeurs Humains",
+      "description": "Créez des récits émotionnels et une stratégie de haut niveau. Nos experts construisent la voix et le positionnement de votre marque avec créativité.",
+      "imageAlt": "collaboration d'équipe sur la stratégie marketing"
+    },
+    "viewDetails": "Voir les détails"
+  },
+  "serviceTiers": {
+    "eyebrow": "Choisissez votre ajustement technologique parfait",
+    "title": "Élevez votre expérience numérique",
+    "static": {
+      "eyebrow": "Option statique",
+      "title": "Lancez-vous avec un site simple",
+      "description": "Commencez fort avec un site web élégant et fiable. Pas de complications—juste une base solide pour votre présence en ligne.",
+      "cta": "Commencer",
+      "imageAlt": "image d'un professionnel confiant"
+    },
+    "standard": {
+      "eyebrow": "Option standard",
+      "title": "Développez avec des fonctionnalités intelligentes",
+      "description": "Ajoutez des outils interactifs et des intégrations au fur et à mesure de votre croissance. Idéal pour les équipes prêtes à franchir l'étape suivante.",
+      "cta": "Explorer",
+      "imageAlt": "image d'un tableau de stratégie de marketing numérique"
+    },
+    "advanced": {
+      "eyebrow": "Option avancée",
+      "title": "Libérez toute la puissance technologique",
+      "description": "Accédez à l'automatisation, aux analyses et aux solutions personnalisées. Pour les innovateurs qui veulent montrer la voie.",
+      "cta": "En savoir plus",
+      "imageAlt": "image d'un cours en classe sur l'IA"
+    },
+    "aiMarketing": {
+      "eyebrow": "Agents Marketing IA",
+      "title": "Précision Automatisée",
+      "description": "Exploitez les agents IA pour un engagement 24/7, une optimisation publicitaire basée sur les données et une mise à l'échelle instantanée du contenu.",
+      "cta": "Déployer l'IA",
+      "imageAlt": "visualisation d'interface ia"
+    },
+    "humanMarketing": {
+      "eyebrow": "Marketeurs Humains",
+      "title": "Stratégie Créative",
+      "description": "Des marketeurs experts créant des récits émotionnels, une stratégie de haut niveau et un positionnement de marque sur mesure.",
+      "cta": "Engager des Experts",
+      "imageAlt": "réunion d'équipe créative"
+    }
+  },
+  "content": {
+    "title": "Découvrez, apprenez et inspirez-vous",
+    "featuredPost": {
+      "category": "Création Web",
+      "title": "Des sites web simples, beaux, à vous",
+      "description": "Des portfolios audacieux aux plateformes avancées, nous donnons vie à votre vision numérique—pas de jargon technique, juste des résultats."
+    },
+    "posts": [
+      {
+        "category": "Création d'applications",
+        "title": "Transformez les idées en applications réelles",
+        "description": "Que vous ayez besoin d'un prototype rapide ou d'une solution robuste, nous construisons des applications qui correspondent à vos objectifs et grandissent avec vous."
+      },
+      {
+        "category": "Données et analyses",
+        "title": "Donnez du sens à vos données",
+        "description": "Transformez les chiffres bruts en insights clairs—voyez les tendances, repérez les opportunités et faites des choix plus intelligents."
+      }
+    ],
+    "links": [
+      {
+        "title": "Ce qui nous distingue",
+        "description": "Nous mélangeons la créativité avec le savoir-faire technique, créant des solutions qui semblent personnelles et puissantes."
+      },
+      {
+        "title": "Options pour chaque besoin",
+        "description": "Choisissez le bon ajustement : statique, standard ou avancé—flexibilité pour chaque projet."
+      },
+      {
+        "title": "Guidance à chaque étape",
+        "description": "De la première idée au jour du lancement, notre équipe est là pour vous soutenir et célébrer vos progrès."
+      },
+      {
+        "title": "Designs pour demain",
+        "description": "Restez en avance avec des outils et styles tournés vers l'avenir qui maintiennent votre entreprise en mouvement."
+      },
+      {
+        "title": "Rejoignez notre communauté créative",
+        "description": "Connectez-vous avec des innovateurs, partagez des idées et aidez à façonner l'avenir de la technologie."
+      },
+      {
+        "title": "N'arrêtez jamais d'apprendre",
+        "description": "Explorez de nouvelles histoires, des conseils pratiques et les dernières technologies—grandissez avec nous chaque jour."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Vos questions technologiques, simplement résolues",
+    "description": "Explorez nos questions les plus courantes et découvrez comment nous rendons la technologie facile, accessible et adaptée à vous. Nous sommes là pour vous guider à chaque étape.",
+    "questions": [
+      {
+        "question": "Quels services sont disponibles ?",
+        "answer": "Nous proposons la création de sites web, le développement d'applications et l'analyse de données—chacun avec des options statiques, standard et avancées. Choisissez ce qui correspond à votre vision et nous nous occuperons du reste."
+      },
+      {
+        "question": "Comment choisir mon meilleur ajustement ?",
+        "answer": "Partagez vos objectifs, votre calendrier et votre budget avec nous. Nous vous guiderons à travers vos options et vous aiderons à trouver la correspondance parfaite pour votre projet."
+      },
+      {
+        "question": "Est-il facile de mettre à niveau plus tard ?",
+        "answer": "Oui ! Commencez simplement et développez quand vous êtes prêt. La mise à niveau est fluide et sans tracas, donc votre technologie peut grandir avec vous."
+      },
+      {
+        "question": "Qu'est-ce qui distingue votre équipe ?",
+        "answer": "Nous combinons des idées tournées vers l'avenir avec des solutions du monde réel, vous gardant informé et inspiré. Notre processus est transparent, collaboratif et toujours en avance."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Parlons technologie",
+    "title": "Connectez. Collaborez. Créez.\nNous sommes prêts à écouter",
+    "description": "Vous avez une question ou une idée ? Nous sommes là pour vous aider à avancer. ",
+    "address": "101 Web Lane, SF, CA",
+    "phone": "+1 (555) 000-0000",
+    "form": {
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "email@siteweb.com",
+      "phone": "Numéro de téléphone",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "inquiryType": "Comment pouvons-nous vous aider ?",
+      "inquiryTypes": {
+        "business": "Demande commerciale",
+        "service": "Demande de service",
+        "partnership": "Partenariat",
+        "other": "Autre"
+      },
+      "message": "Votre message",
+      "messagePlaceholder": "Tapez votre message...",
+      "submit": "Contactez-nous maintenant"
+    }
+  },
+  "common": {
+    "skipToContent": "Aller au contenu principal"
+  }
+}

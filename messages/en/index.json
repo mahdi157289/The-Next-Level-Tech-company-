@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "brand": "The Next Level Tech Company",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "help": "Help",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "startNow": "Start now"
+  },
+  "hero": {
+    "title": "Reimagine your business, Innovate boldly, Scale higher, Empower success",
+    "acronymTitle": "Reimagine your business|Innovate boldly|Scale higher|Empower success",
+    "tagline": "Rise to the next level . . .",
+    "description": "Step into a world where your ideas become reality. From sleek websites to powerful apps and smart data solutions, we offer flexible options for every vision. Let's build, innovate, and grow together—your next level starts here.",
+    "ctaPrimary": "Start now",
+    "ctaSecondary": "Explore"
+  },
+  "footer": {
+    "newsletterTitle": "Stay curious. Stay connected.",
+    "newsletterDescription": "Get the latest tech insights, stories, and updates—join our future-focused community.",
+    "emailPlaceholder": "Email",
+    "subscribe": "Subscribe",
+    "subscribedMessage": "Welcome! You're officially part of the future.",
+    "policyText": "Read our <policy>policy</policy> to learn more.",
+    "copyright": "© 2025 Next Level Tech Company",
+    "madeBy": "Made by Taylor Brooks"
+  },
+  "services": {
+    "title": "Explore what's possible",
+    "groups": {
+      "development": "Development Services",
+      "data": "Data Services",
+      "marketing": "Marketing Services"
+    },
+    "websiteCreation": {
+      "title": "Website creation",
+      "description": "Launch your vision with a website that fits your style—choose from static, standard, or advanced builds. We'll guide you every step, making the process simple and exciting.",
+      "imageAlt": "image of a client interacting with digital content"
+    },
+    "appDevelopment": {
+      "title": "App development",
+      "description": "Turn your ideas into reality with custom apps. Whether you need a basic prototype or a feature-rich solution, we craft seamless experiences for every user.",
+      "imageAlt": "image of team brainstorming session",
+      "highlight1": "Rapid prototyping and MVPs",
+      "highlight2": "Scalable architecture and APIs",
+      "highlight3": "Cross-platform experiences",
+      "highlight4": "Performance and accessibility"
+    },
+    "dataOrganization": {
+      "title": "Data organization",
+      "description": "Make sense of your data with clarity. We organize, structure, and streamline your information, so you can focus on what matters and grow with confidence.",
+      "imageAlt": "image of futuristic technology"
+    },
+    "analyticsSolutions": {
+      "title": "Analytics solutions",
+      "description": "See the story behind your numbers. Our analytics turn raw data into insights, helping you spot trends, seize opportunities, and plan your next move.",
+      "imageAlt": "image of popular tech gadgets display"
+    },
+    "marketingAI": {
+      "title": "AI Marketing Agents",
+      "description": "Boost your reach with 24/7 automated engagement. Our AI agents optimize ads, scale content, and interact with customers instantly.",
+      "imageAlt": "visualization of ai neural network marketing"
+    },
+    "marketingHuman": {
+      "title": "Human Marketers",
+      "description": "Craft emotional narratives and high-level strategy. Our expert marketers build your brand's voice and positioning with creativity.",
+      "imageAlt": "team collaboration on marketing strategy"
+    },
+    "viewDetails": "View details"
+  },
+  "serviceTiers": {
+    "eyebrow": "Choose your perfect tech fit",
+    "title": "Elevate your digital experience",
+    "static": {
+      "eyebrow": "Static option",
+      "title": "Launch with a simple site",
+      "description": "Start strong with a sleek, reliable website. No fuss—just a solid foundation for your online presence.",
+      "cta": "Start now",
+      "imageAlt": "image of confident professional"
+    },
+    "standard": {
+      "eyebrow": "Standard option",
+      "title": "Expand with smart features",
+      "description": "Add interactive tools and integrations as you grow. Ideal for teams ready to take the next step.",
+      "cta": "Explore",
+      "imageAlt": "image of a digital marketing strategy board"
+    },
+    "advanced": {
+      "eyebrow": "Advanced option",
+      "title": "Unleash full tech power",
+      "description": "Access automation, analytics, and custom solutions. For innovators who want to lead the way.",
+      "cta": "Learn more",
+      "imageAlt": "image of classroom lecture on ai"
+    },
+    "aiMarketing": {
+      "eyebrow": "AI Marketing Agents",
+      "title": "Automated Precision",
+      "description": "Leverage AI agents for 24/7 engagement, data-driven ad optimization, and instant content scaling.",
+      "cta": "Deploy AI",
+      "imageAlt": "ai interface visualization"
+    },
+    "humanMarketing": {
+      "eyebrow": "Human Marketers",
+      "title": "Creative Strategy",
+      "description": "Expert marketers crafting emotional narratives, high-level strategy, and bespoke brand positioning.",
+      "cta": "Hire Experts",
+      "imageAlt": "creative team meeting"
+    }
+  },
+  "content": {
+    "title": "Discover, learn, and get inspired",
+    "featuredPost": {
+      "category": "Web Creation",
+      "title": "Websites made simple, beautiful, yours",
+      "description": "From bold portfolios to advanced platforms, we bring your digital vision to life—no tech jargon, just results."
+    },
+    "posts": [
+      {
+        "category": "App Creation",
+        "title": "Turn ideas into real-world apps",
+        "description": "Whether you need a quick prototype or a robust solution, we build apps that fit your goals and grow with you."
+      },
+      {
+        "category": "Data & Analytics",
+        "title": "Make sense of your data",
+        "description": "Transform raw numbers into clear insights—see trends, spot opportunities, and make smarter choices."
+      }
+    ],
+    "links": [
+      {
+        "title": "What sets us apart",
+        "description": "We mix creativity with tech know-how, crafting solutions that feel personal and powerful."
+      },
+      {
+        "title": "Options for every need",
+        "description": "Choose the right fit: static, standard, or advanced—flexibility for every project."
+      },
+      {
+        "title": "Guidance at every step",
+        "description": "From first idea to launch day, our team is here to support and celebrate your progress."
+      },
+      {
+        "title": "Designs for tomorrow",
+        "description": "Stay ahead with future-focused tools and styles that keep your business moving forward."
+      },
+      {
+        "title": "Join our creative community",
+        "description": "Connect with innovators, share ideas, and help shape what's next in tech."
+      },
+      {
+        "title": "Never stop learning",
+        "description": "Explore fresh stories, practical tips, and the latest in tech—grow with us every day."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Your tech questions, simply solved",
+    "description": "Explore our most common questions and discover how we make tech easy, approachable, and tailored for you. We're here to guide you every step of the way.",
+    "questions": [
+      {
+        "question": "Which services are available?",
+        "answer": "We offer website creation, app development, and data analytics—each with static, standard, and advanced options. Choose what fits your vision and we'll handle the rest."
+      },
+      {
+        "question": "How do I pick my best fit?",
+        "answer": "Share your goals, timeline, and budget with us. We'll walk you through your options and help you find the perfect match for your project."
+      },
+      {
+        "question": "Is it easy to upgrade later?",
+        "answer": "Yes! Start simple and scale up whenever you're ready. Upgrading is smooth and hassle-free, so your tech can grow with you."
+      },
+      {
+        "question": "What sets your team apart?",
+        "answer": "We combine future-focused ideas with real-world solutions, keeping you informed and inspired. Our process is transparent, collaborative, and always a step ahead."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Let's talk tech",
+    "title": "Connect. Collaborate. Create.\nWe're ready to listen",
+    "description": "Have a question or idea? We're here to help you move forward. ",
+    "address": "101 Web Lane, SF, CA",
+    "phone": "+1 (555) 000-0000",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email address",
+      "emailPlaceholder": "email@website.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "inquiryType": "How can we help you?",
+      "inquiryTypes": {
+        "business": "Business inquiry",
+        "service": "Service request",
+        "partnership": "Partnership",
+        "other": "Other"
+      },
+      "message": "Your message",
+      "messagePlaceholder": "Type your message...",
+      "submit": "Contact us now"
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to main content"
+  }
+}
