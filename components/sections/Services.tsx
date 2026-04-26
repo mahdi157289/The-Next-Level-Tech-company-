@@ -193,7 +193,7 @@ export default function Services() {
                     {(() => {
                       const Icon = services[0].icon;
                       return (
-                        <h4 className={`${leftExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2`}>
+                        <h4 className={`${leftExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2 text-white`}>
                           <Icon className={`${leftExpanded ? 'h-7 w-7' : 'h-6 w-6'} text-white`} />
                           {services[0].title}
                         </h4>
@@ -228,7 +228,7 @@ export default function Services() {
                     {(() => {
                       const Icon = services[1].icon;
                       return (
-                        <h4 className={`${leftExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3`}>
+                        <h4 className={`${leftExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3 text-white`}>
                           <Icon className={`${leftExpanded ? 'h-6 w-6' : 'h-7 w-7'} text-white`} />
                           {services[1].title}
                         </h4>
@@ -305,7 +305,7 @@ export default function Services() {
                     {(() => {
                       const Icon = services[2].icon;
                       return (
-                        <h4 className={`${secondExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2`}>
+                        <h4 className={`${secondExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2 text-white`}>
                           <Icon className={`${secondExpanded ? 'h-7 w-7' : 'h-6 w-6'} text-white`} />
                           {services[2].title}
                         </h4>
@@ -340,7 +340,7 @@ export default function Services() {
                     {(() => {
                       const Icon = services[3].icon;
                       return (
-                        <h4 className={`${secondExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3`}>
+                        <h4 className={`${secondExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3 text-white`}>
                           <Icon className={`${secondExpanded ? 'h-6 w-6' : 'h-7 w-7'} text-white`} />
                           {services[3].title}
                         </h4>
@@ -409,7 +409,7 @@ export default function Services() {
                     {(() => {
                       const Icon = services[4].icon;
                       return (
-                        <h4 className={`${thirdExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2`}>
+                        <h4 className={`${thirdExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2 text-white`}>
                           <Icon className={`${thirdExpanded ? 'h-7 w-7' : 'h-6 w-6'} text-white`} />
                           {services[4].title}
                         </h4>
@@ -444,7 +444,7 @@ export default function Services() {
                     {(() => {
                       const Icon = services[5].icon;
                       return (
-                        <h4 className={`${thirdExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3`}>
+                        <h4 className={`${thirdExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3 text-white`}>
                           <Icon className={`${thirdExpanded ? 'h-6 w-6' : 'h-7 w-7'} text-white`} />
                           {services[5].title}
                         </h4>
