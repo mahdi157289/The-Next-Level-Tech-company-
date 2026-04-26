@@ -101,10 +101,10 @@ export default function ServiceTiers() {
     <section className="py-24 bg-gray-50 dark:bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
+          <p className="text-sm uppercase tracking-wider text-black dark:text-gray-400 mb-2">
             {t('eyebrow')}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
             {t('title')}
           </h2>
         </div>
@@ -134,13 +134,13 @@ export default function ServiceTiers() {
                       />
                     </div>
                     <div className="space-y-4">
-                      <p className="text-sm uppercase tracking-wider text-white/70">
+                      <p className="text-sm uppercase tracking-wider text-black dark:text-white/70">
                         {tier.eyebrow}
                       </p>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white">
                         {tier.title}
                       </h3>
-                      <p className="text-lg text-white/80">
+                      <p className="text-lg text-black dark:text-white/80">
                         {tier.description}
                       </p>
                       <Button 
