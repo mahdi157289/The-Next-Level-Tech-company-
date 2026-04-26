@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
-import { Globe, Users, CheckCircle, BarChart3, Bot, Megaphone, ArrowLeftRight } from 'lucide-react';
+import { Globe, Users, CheckCircle, BarChart3, Bot, Megaphone, ArrowLeftRight, Zap, Cpu } from 'lucide-react';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 
 export default function Services() {
@@ -24,6 +24,10 @@ export default function Services() {
   const gridRefThird = useRef<HTMLDivElement>(null);
   const leftCardRefThird = useRef<HTMLDivElement>(null);
   const rightCardRefThird = useRef<HTMLDivElement>(null);
+  const [fourthExpanded, setFourthExpanded] = useState(false);
+  const gridRefFourth = useRef<HTMLDivElement>(null);
+  const leftCardRefFourth = useRef<HTMLDivElement>(null);
+  const rightCardRefFourth = useRef<HTMLDivElement>(null);
 
   const services = [
     {
@@ -67,6 +71,20 @@ export default function Services() {
       description: t('marketingHuman.description'),
       image: '/images/8c377ce8-99cc-44ef-9617-c0d570c3a9b4.avif',
       imageAlt: t('marketingHuman.imageAlt'),
+    },
+    {
+      icon: Zap,
+      title: t('simpleAutomation.title'),
+      description: t('simpleAutomation.description'),
+      image: '/images/simple-automation-v2.jpg',
+      imageAlt: t('simpleAutomation.imageAlt'),
+    },
+    {
+      icon: Cpu,
+      title: t('aiAgentAutomation.title'),
+      description: t('aiAgentAutomation.description'),
+      image: '/images/ai-automation-v2.jpg',
+      imageAlt: t('aiAgentAutomation.imageAlt'),
     },
   ];
 
@@ -152,6 +170,20 @@ export default function Services() {
       gsap.to([leftCardRefThird.current, rightCardRefThird.current], { duration: 0.2, scale: 1 });
     }
   }, [thirdExpanded]);
+
+  useEffect(() => {
+    const isDesktop = typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches;
+    if (!gridRefFourth.current) return;
+    if (isDesktop) {
+      const targetCols = fourthExpanded ? '2fr 1fr' : '1fr 2fr';
+      gsap.to(gridRefFourth.current, { duration: 0.5, ease: 'power2.out', gridTemplateColumns: targetCols });
+      gsap.to(leftCardRefFourth.current, { duration: 0.4, ease: 'power2.out', scale: fourthExpanded ? 1 : 0.98 });
+      gsap.to(rightCardRefFourth.current, { duration: 0.4, ease: 'power2.out', scale: fourthExpanded ? 0.98 : 1 });
+    } else {
+      gridRefFourth.current.style.gridTemplateColumns = '';
+      gsap.to([leftCardRefFourth.current, rightCardRefFourth.current], { duration: 0.2, scale: 1 });
+    }
+  }, [fourthExpanded]);
 
   return (
     <section ref={sectionRef} id="services" className="py-24 bg-[#00353F] text-white">
@@ -470,6 +502,109 @@ export default function Services() {
               >
                 <button
                   onClick={() => setThirdExpanded(!thirdExpanded)}
+                  className="rounded-full w-16 h-16 bg-white shadow-2xl ring-4 ring-white/30 hover:scale-105 active:scale-95 transition transform-gpu"
+                  style={{ perspective: '800px' }}
+                  aria-label="Swap cards"
+                  title="Swap cards"
+                >
+                  <div className="w-full h-full rounded-full flex items-center justify-center">
+                    <ArrowLeftRight className="h-7 w-7 text-[#020817]" />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl md:text-2xl font-semibold">
+                {t('groups.automations')}
+              </h3>
+              <div className="h-px w-1/2 bg-white/20" />
+            </div>
+            <div
+              ref={gridRefFourth}
+              className={`relative grid grid-cols-1 ${fourthExpanded ? 'md:grid-cols-[2fr_1fr]' : 'md:grid-cols-[1fr_2fr]'} gap-6 md:transition-all md:duration-500 md:ease-out items-stretch`}
+            >
+              <Card
+                ref={leftCardRefFourth}
+                className="service-card h-full bg-[#020817]/80 backdrop-blur-md border border-white overflow-hidden will-change-transform shadow-xl hover:shadow-2xl transition-shadow transform-gpu hover:-translate-y-0.5"
+                data-big={fourthExpanded ? 'true' : undefined}
+              >
+                <CardContent className={fourthExpanded ? 'p-8 transition-[padding] duration-500 ease-out flex flex-col h-full' : 'p-6 transition-[padding] duration-500 ease-out flex flex-col h-full'}>
+                  <div className="flex-1 flex flex-col">
+                    <div className="relative h-64 mb-6 rounded-lg overflow-hidden bg-[#0a192f]">
+                      <Image
+                        src={services[6].image}
+                        alt={services[6].imageAlt}
+                        fill
+                        className="object-contain transition-transform duration-500 hover:scale-105 p-2"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    {(() => {
+                      const Icon = services[6].icon;
+                      return (
+                        <h4 className={`${fourthExpanded ? 'text-2xl' : 'text-lg'} font-semibold mb-3 flex items-center gap-2 text-white`}>
+                          <Icon className={`${fourthExpanded ? 'h-7 w-7' : 'h-6 w-6'} text-white`} />
+                          {services[6].title}
+                        </h4>
+                      );
+                    })()}
+                    <p className={`text-gray-300 ${fourthExpanded ? 'mb-4' : 'text-sm mb-4'}`}>
+                      {services[6].description}
+                    </p>
+                  </div>
+                  <Button variant="secondary" size="sm" className="mt-6 w-full bg-[#00353F] hover:bg-[#00353F] text-white border border-white">
+                    {t('viewDetails')}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card
+                ref={rightCardRefFourth}
+                className="service-card h-full bg-[#020817]/80 backdrop-blur-md border border-white overflow-hidden will-change-transform shadow-xl hover:shadow-2xl transition-shadow transform-gpu hover:-translate-y-0.5"
+                data-big={!fourthExpanded ? 'true' : undefined}
+              >
+                <CardContent className={fourthExpanded ? 'p-6 transition-[padding] duration-500 ease-out flex flex-col h-full' : 'p-8 transition-[padding] duration-500 ease-out flex flex-col h-full'}>
+                  <div className="flex-1 flex flex-col">
+                    <div className="relative h-64 mb-6 rounded-lg overflow-hidden bg-[#0a192f]">
+                      <Image
+                        src={services[7].image}
+                        alt={services[7].imageAlt}
+                        fill
+                        className="object-contain transition-transform duration-500 hover:scale-105 p-2"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    {(() => {
+                      const Icon = services[7].icon;
+                      return (
+                        <h4 className={`${fourthExpanded ? 'text-lg' : 'text-2xl'} font-semibold mb-3 flex items-center gap-3 text-white`}>
+                          <Icon className={`${fourthExpanded ? 'h-6 w-6' : 'h-7 w-7'} text-white`} />
+                          {services[7].title}
+                        </h4>
+                      );
+                    })()}
+                    <p className={`text-gray-300 ${fourthExpanded ? 'text-sm mb-4' : 'mb-4'}`}>
+                      {services[7].description}
+                    </p>
+                  </div>
+                  <Button variant="secondary" size="sm" className="mt-6 w-full bg-[#00353F] hover:bg-[#00353F] text-white border border-white">
+                    {t('viewDetails')}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <div
+                className="hidden md:block absolute z-20 -translate-y-1/2 -translate-x-1/2"
+                style={{
+                  top: '50%',
+                  left: fourthExpanded ? 'calc(66.666% + 0.75rem)' : 'calc(33.333% + 0.75rem)',
+                  transition: 'left 0.5s ease-in-out',
+                }}
+              >
+                <button
+                  onClick={() => setFourthExpanded(!fourthExpanded)}
                   className="rounded-full w-16 h-16 bg-white shadow-2xl ring-4 ring-white/30 hover:scale-105 active:scale-95 transition transform-gpu"
                   style={{ perspective: '800px' }}
                   aria-label="Swap cards"

@@ -53,6 +53,22 @@ export default function ServiceTiers() {
       image: '/images/8c377ce8-99cc-44ef-9617-c0d570c3a9b4.avif',
       imageAlt: t('humanMarketing.imageAlt'),
     },
+    {
+      eyebrow: t('simpleAutomation.eyebrow'),
+      title: t('simpleAutomation.title'),
+      description: t('simpleAutomation.description'),
+      cta: t('simpleAutomation.cta'),
+      image: '/images/simple-automation-v2.jpg',
+      imageAlt: t('simpleAutomation.imageAlt'),
+    },
+    {
+      eyebrow: t('aiAgentAutomation.eyebrow'),
+      title: t('aiAgentAutomation.title'),
+      description: t('aiAgentAutomation.description'),
+      cta: t('aiAgentAutomation.cta'),
+      image: '/images/ai-automation-v2.jpg',
+      imageAlt: t('aiAgentAutomation.imageAlt'),
+    },
   ];
 
   useEffect(() => {
@@ -124,12 +140,12 @@ export default function ServiceTiers() {
               <Card className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className="relative aspect-square rounded-lg overflow-hidden" style={{ position: 'relative' }}>
+                    <div className={`relative aspect-square rounded-lg overflow-hidden ${tier.image.includes('automation') ? 'bg-[#0a192f] p-4' : ''}`} style={{ position: 'relative' }}>
                       <Image
                         src={tier.image}
                         alt={tier.imageAlt}
                         fill
-                        className="object-cover"
+                        className={tier.image.includes('automation') ? 'object-contain' : 'object-cover'}
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>

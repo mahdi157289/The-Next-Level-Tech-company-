@@ -49,7 +49,7 @@ export default function HomePage() {
         <SectionWrapper id="content" className="bg-white/90">
           <ContentSection />
         </SectionWrapper>
-        <SectionWrapper id="faq" className="bg-gray-50/90">
+        <SectionWrapper id="faq" className="bg-transparent">
           <FAQ />
         </SectionWrapper>
         <SectionWrapper id="contact" className="bg-white/90">

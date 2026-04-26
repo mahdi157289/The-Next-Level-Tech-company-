@@ -93,18 +93,18 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24">
+    <section ref={sectionRef} id="contact" className="py-24 bg-white dark:bg-[#00353F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-wider text-gray-600 mb-2">
+          <p className="text-sm uppercase tracking-wider text-gray-600 dark:text-white/60 mb-2">
             {t('eyebrow')}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white whitespace-pre-line">
             {t('title')}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-white/80 max-w-2xl mx-auto">
             {t('description')}{' '}
-            <a href="mailto:hello@nextleveltech.com" className="text-blue-600 hover:underline">
+            <a href="mailto:hello@nextleveltech.com" className="text-blue-600 dark:text-blue-400 hover:underline">
               hello@nextleveltech.com
             </a>
           </p>
@@ -113,18 +113,18 @@ export default function Contact() {
         {/* Contact Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="contact-item text-center">
-            <MapPin className="h-12 w-12 mx-auto mb-4 text-gray-600" />
-            <p className="text-gray-700">{t('address')}</p>
+            <MapPin className="h-12 w-12 mx-auto mb-4 text-gray-600 dark:text-white/60" />
+            <p className="text-gray-700 dark:text-white/80">{t('address')}</p>
           </div>
           <div className="contact-item text-center">
-            <Phone className="h-12 w-12 mx-auto mb-4 text-gray-600" />
-            <p className="text-gray-700">{t('phone')}</p>
+            <Phone className="h-12 w-12 mx-auto mb-4 text-gray-600 dark:text-white/60" />
+            <p className="text-gray-700 dark:text-white/80">{t('phone')}</p>
           </div>
           <div className="contact-item text-center">
-            <Mail className="h-12 w-12 mx-auto mb-4 text-gray-600" />
+            <Mail className="h-12 w-12 mx-auto mb-4 text-gray-600 dark:text-white/60" />
             <a
               href="mailto:hello@nextleveltech.com"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
             >
               hello@nextleveltech.com
             </a>
@@ -132,23 +132,24 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <Card className="contact-item">
+        <Card className="contact-item dark:bg-black dark:border-white/10">
           <CardContent className="p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="name">{t('form.name')}</Label>
+                  <Label htmlFor="name" className="dark:text-white">{t('form.name')}</Label>
                   <Input
                     id="name"
                     name="name"
                     placeholder={t('form.namePlaceholder')}
                     value={formData.name}
                     onChange={handleChange}
+                    className="dark:bg-zinc-900 dark:border-white/10 dark:text-white dark:placeholder:text-white/30"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email">{t('form.email')}</Label>
+                  <Label htmlFor="email" className="dark:text-white">{t('form.email')}</Label>
                   <Input
                     id="email"
                     name="email"
@@ -156,11 +157,12 @@ export default function Contact() {
                     placeholder={t('form.emailPlaceholder')}
                     value={formData.email}
                     onChange={handleChange}
+                    className="dark:bg-zinc-900 dark:border-white/10 dark:text-white dark:placeholder:text-white/30"
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="phone">{t('form.phone')}</Label>
+                  <Label htmlFor="phone" className="dark:text-white">{t('form.phone')}</Label>
                   <Input
                     id="phone"
                     name="phone"
@@ -168,10 +170,11 @@ export default function Contact() {
                     placeholder={t('form.phonePlaceholder')}
                     value={formData.phone}
                     onChange={handleChange}
+                    className="dark:bg-zinc-900 dark:border-white/10 dark:text-white dark:placeholder:text-white/30"
                   />
                 </div>
                 <div>
-                  <Label className="mb-2 block">{t('form.inquiryType')}</Label>
+                  <Label className="mb-2 block dark:text-white">{t('form.inquiryType')}</Label>
                   <RadioGroup
                     value={formData.inquiryType}
                     onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
@@ -184,8 +187,8 @@ export default function Contact() {
                       t('form.inquiryTypes.other'),
                     ].map((type, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <RadioGroupItem value={type} id={`type-${index}`} />
-                        <Label htmlFor={`type-${index}`} className="cursor-pointer">
+                        <RadioGroupItem value={type} id={`type-${index}`} className="dark:border-white/30 dark:text-white" />
+                        <Label htmlFor={`type-${index}`} className="cursor-pointer dark:text-white/80">
                           {type}
                         </Label>
                       </div>
@@ -194,18 +197,18 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <Label htmlFor="message">{t('form.message')}</Label>
+                <Label htmlFor="message" className="dark:text-white">{t('form.message')}</Label>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder={t('form.messagePlaceholder')}
                   value={formData.message}
                   onChange={handleChange}
-                  rows={6}
-                  className="min-h-[150px]"
+                  className="dark:bg-zinc-900 dark:border-white/10 dark:text-white dark:placeholder:text-white/30 min-h-[150px]"
+                  required
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full">
+              <Button type="submit" size="lg" className="w-full md:w-auto bg-[#00353F] hover:bg-[#002a33] text-white dark:bg-white dark:text-[#00353F] dark:hover:bg-white/90">
                 {t('form.submit')}
               </Button>
             </form>

@@ -65,6 +65,7 @@ html {
 
 /* Navbar scroll effect: floating pill container, keep nav full width */
 nav.scrolled {
+  top: 8px !important;
   background-color: transparent !important;
   border-color: transparent !important;
   box-shadow: none !important;

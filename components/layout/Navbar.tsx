@@ -26,7 +26,8 @@ import {
   Settings, 
   Rocket, 
   Phone,
-  MessageSquare
+  MessageSquare,
+  Zap
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -79,7 +80,7 @@ export default function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent dark:text-white [&.scrolled]:text-white">{t('services')}</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid gap-0 p-4 md:w-[900px] lg:w-[1000px] md:grid-cols-4 mx-auto">
+                    <div className="grid gap-0 p-4 md:w-[1000px] lg:w-[1200px] md:grid-cols-5 mx-auto">
                       <div className="px-4 py-2">
                         <div className="flex items-center gap-2 mb-2">
                           <Globe className="h-4 w-4 text-foreground" />
@@ -133,8 +134,23 @@ export default function Navbar() {
                       </div>
                       <div className="px-4 py-2 md:border-l">
                         <div className="flex items-center gap-2 mb-2">
+                          <Zap className="h-4 w-4 text-foreground" />
+                          <span className="text-sm font-semibold">{ts('groups.automations')}</span>
+                        </div>
+                        <div className="h-px bg-border mb-2" />
+                        <ul className="space-y-1">
+                          <ListItem href="#services" title={ts('simpleAutomation.title')} icon={CircleDot}>
+                            {ts('simpleAutomation.description')}
+                          </ListItem>
+                          <ListItem href="#services" title={ts('aiAgentAutomation.title')} icon={Bot}>
+                            {ts('aiAgentAutomation.description')}
+                          </ListItem>
+                        </ul>
+                      </div>
+                      <div className="px-4 py-2 md:border-l">
+                        <div className="flex items-center gap-2 mb-2">
                           <BarChart3 className="h-4 w-4 text-foreground" />
-                          <span className="text-sm font-semibold">{ts('marketingAI.title')}</span>
+                          <span className="text-sm font-semibold">{ts('groups.marketing')}</span>
                         </div>
                         <div className="h-px bg-border mb-2" />
                         <ul className="space-y-1">

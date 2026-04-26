@@ -77,24 +77,24 @@ export default function FAQ() {
   ];
 
   return (
-    <section ref={sectionRef} id="faq" className="py-24 bg-gray-50">
+    <section ref={sectionRef} id="faq" className="py-24 bg-transparent">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
             {t('title')}
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-gray-400">
             {t('description')}
           </p>
         </div>
 
         <Accordion type="single" collapsible className="w-full">
           {questions.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`} data-accordion-item className="border-gray-200">
-              <AccordionTrigger className="text-left text-lg font-medium py-6">
+            <AccordionItem key={index} value={`item-${index}`} data-accordion-item className="border-gray-200 dark:border-gray-800">
+              <AccordionTrigger className="text-left text-lg font-medium py-6 dark:text-white hover:dark:text-white/80">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 pb-6">
+              <AccordionContent className="text-gray-600 dark:text-gray-400 pb-6">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

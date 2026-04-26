@@ -32,7 +32,18 @@
     "groups": {
       "development": "Services de Développement",
       "data": "Services de Données",
-      "marketing": "Services de Marketing"
+      "marketing": "Services de Marketing",
+      "automations": "Services d'Automatisation"
+    },
+    "simpleAutomation": {
+      "title": "Automatisation Simple",
+      "description": "Rationalisez vos tâches répétitives avec des flux de travail efficaces et rapides. Parfait pour les petites entreprises cherchant à optimiser leurs opérations quotidiennes.",
+      "imageAlt": "visualisation de l'automatisation simple des flux de travail numériques"
+    },
+    "aiAgentAutomation": {
+      "title": "Automatisation par Agents IA",
+      "description": "Déployez des agents IA intelligents qui gèrent de manière autonome la prise de décision complexe et les interactions avec les clients, libérant ainsi du temps pour l'innovation.",
+      "imageAlt": "visualisation d'agents IA avancés au travail"
     },
     "websiteCreation": {
       "title": "Création de site web",
@@ -107,6 +118,20 @@
       "description": "Des marketeurs experts créant des récits émotionnels, une stratégie de haut niveau et un positionnement de marque sur mesure.",
       "cta": "Engager des Experts",
       "imageAlt": "réunion d'équipe créative"
+    },
+    "simpleAutomation": {
+      "eyebrow": "Automatisation Simple",
+      "title": "Rationaliser les flux",
+      "description": "Automatisez vos tâches répétitives et gagnez des heures chaque semaine. Idéal pour les petites entreprises en quête d'efficacité.",
+      "cta": "Automatiser",
+      "imageAlt": "visualisation de l'automatisation simple des flux de travail numériques"
+    },
+    "aiAgentAutomation": {
+      "eyebrow": "Agents IA",
+      "title": "Opérations Intelligentes",
+      "description": "Déployez des agents IA personnalisés pour gérer des tâches complexes, le support client et le traitement des données en toute autonomie.",
+      "cta": "Déployer",
+      "imageAlt": "visualisation d'agents IA avancés au travail"
     }
   },
   "content": {
@@ -126,6 +151,11 @@
         "category": "Données et analyses",
         "title": "Donnez du sens à vos données",
         "description": "Transformez les chiffres bruts en insights clairs—voyez les tendances, repérez les opportunités et faites des choix plus intelligents."
+      },
+      {
+        "category": "Automatisation",
+        "title": "Travaillez plus intelligemment",
+        "description": "Des flux de travail simples aux agents IA intelligents, nous vous aidons à automatiser la routine."
       }
     ],
     "links": [
@@ -161,7 +191,7 @@
     "questions": [
       {
         "question": "Quels services sont disponibles ?",
-        "answer": "Nous proposons la création de sites web, le développement d'applications et l'analyse de données—chacun avec des options statiques, standard et avancées. Choisissez ce qui correspond à votre vision et nous nous occuperons du reste."
+        "answer": "Nous proposons la création de sites web, le développement d'applications, l'analyse de données et des services d'automatisation—chacun avec des options flexibles. Choisissez ce qui correspond à votre vision et nous nous occuperons du reste."
       },
       {
         "question": "Comment choisir mon meilleur ajustement ?",

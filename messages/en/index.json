@@ -32,7 +32,18 @@
     "groups": {
       "development": "Development Services",
       "data": "Data Services",
-      "marketing": "Marketing Services"
+      "marketing": "Marketing Services",
+      "automations": "Automation Services"
+    },
+    "simpleAutomation": {
+      "title": "Simple Automation",
+      "description": "Streamline your repetitive tasks with efficient, time-saving workflows. Perfect for small businesses looking to optimize their daily operations.",
+      "imageAlt": "visualization of simple digital workflow automation"
+    },
+    "aiAgentAutomation": {
+      "title": "AI Agent Automation",
+      "description": "Deploy intelligent AI agents that handle complex decision-making and customer interactions autonomously, giving your team more space to innovate.",
+      "imageAlt": "visualization of advanced ai agents at work"
     },
     "websiteCreation": {
       "title": "Website creation",
@@ -107,6 +118,20 @@
       "description": "Expert marketers crafting emotional narratives, high-level strategy, and bespoke brand positioning.",
       "cta": "Hire Experts",
       "imageAlt": "creative team meeting"
+    },
+    "simpleAutomation": {
+      "eyebrow": "Simple Automation",
+      "title": "Streamline Workflows",
+      "description": "Automate your repetitive tasks and save hours every week. Ideal for small businesses seeking efficiency.",
+      "cta": "Automate Now",
+      "imageAlt": "visualization of simple digital workflow automation"
+    },
+    "aiAgentAutomation": {
+      "eyebrow": "AI Agent Automation",
+      "title": "Intelligent Operations",
+      "description": "Deploy custom AI agents to handle complex tasks, customer support, and data processing autonomously.",
+      "cta": "Deploy Agents",
+      "imageAlt": "visualization of advanced ai agents at work"
     }
   },
   "content": {
@@ -126,6 +151,16 @@
         "category": "Data & Analytics",
         "title": "Make sense of your data",
         "description": "Transform raw numbers into clear insights—see trends, spot opportunities, and make smarter choices."
+      },
+      {
+        "category": "Automation",
+        "title": "Work smarter with automation",
+        "description": "From simple workflows to intelligent AI agents, we help you automate the routine."
+      },
+      {
+        "category": "Marketing",
+        "title": "Elevate your brand presence",
+        "description": "Combine AI precision with human creativity to reach your audience and scale your growth."
       }
     ],
     "links": [
@@ -161,7 +196,7 @@
     "questions": [
       {
         "question": "Which services are available?",
-        "answer": "We offer website creation, app development, and data analytics—each with static, standard, and advanced options. Choose what fits your vision and we'll handle the rest."
+        "answer": "We offer website creation, app development, data analytics, and automation services—each with flexible options. Choose what fits your vision and we'll handle the rest."
       },
       {
         "question": "How do I pick my best fit?",
