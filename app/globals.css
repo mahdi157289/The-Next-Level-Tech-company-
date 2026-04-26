@@ -72,10 +72,20 @@ nav.scrolled {
   -webkit-backdrop-filter: none !important;
 }
 nav.scrolled .nav-container {
-  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-lg border dark:border-slate-800 rounded-full mx-auto w-[calc(100%-1rem)] sm:w-[calc(100%-4rem)] max-w-5xl overflow-visible;
+  @apply bg-[#00353F]/70 dark:bg-[#00353F]/70 backdrop-blur-xl shadow-lg border dark:border-white/20 rounded-full mx-auto w-[calc(100%-1rem)] sm:w-[calc(100%-4rem)] max-w-5xl overflow-visible;
 }
 nav.scrolled .nav-inner {
   @apply px-4;
+}
+
+nav.scrolled .nav-inner .nav-brand-text,
+nav.scrolled .nav-inner .nav-link,
+nav.scrolled .nav-inner button {
+  @apply text-white !important;
+}
+
+nav.scrolled .nav-inner .nav-link:hover {
+  @apply text-white/80 !important;
 }
 
 /* GSAP animation classes */

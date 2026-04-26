@@ -19,7 +19,7 @@ export default function ParticlesBackground() {
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [init]);
 
   const particlesLoaded = useCallback(async (container?: Container) => {
     if (container) {
@@ -33,11 +33,31 @@ export default function ParticlesBackground() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    setTheme(mq.matches ? 'dark' : 'light');
-    const onChange = (e: MediaQueryListEvent) => setTheme(e.matches ? 'dark' : 'light');
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
+    
+    // Function to check the current theme class on documentElement
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'dark' : 'light');
+    };
+
+    // Initial check
+    checkTheme();
+
+    // Observe class changes on the html element
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          checkTheme();
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const options = useMemo(() => {

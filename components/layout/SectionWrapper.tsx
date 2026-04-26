@@ -7,13 +7,14 @@ interface SectionWrapperProps {
   children: ReactNode;
   className?: string;
   id?: string;
+  animate?: boolean;
 }
 
-export default function SectionWrapper({ children, className = '', id }: SectionWrapperProps) {
+export default function SectionWrapper({ children, className = '', id, animate = true }: SectionWrapperProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+    if (!sectionRef.current || !animate) return;
 
     const ctx = gsap.context(() => {
       const nextSection = sectionRef.current?.nextElementSibling;

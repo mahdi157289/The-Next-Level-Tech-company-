@@ -62,51 +62,35 @@ export default function ServiceTiers() {
       const cards = containerRef.current?.querySelectorAll('[data-sticky-card]') || [];
       
       cards.forEach((card, index) => {
-        const isBlurCard = index > 0; // Cards 2 & 3 have blur
-        
-        // Create sticky pin
+        // Create a single ScrollTrigger for both pinning and animation
         ScrollTrigger.create({
-          trigger: card,
-          start: 'top top',
-          end: 'bottom top',
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: 1,
-        });
-
-        // Create scroll progress animation timeline
-        const tl = gsap.timeline({
-          scrollTrigger: {
             trigger: card,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
-
-        // Keyframe 0%: Full scale, full opacity, no blur
-        tl.to(card, {
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)',
-          duration: 0.1,
-        }, 0);
-
-        // Keyframe 10%: Still full scale, full opacity, blur starts (for blur cards)
-        if (isBlurCard) {
-          tl.to(card, {
-            filter: 'blur(0px)',
-            duration: 0.1,
-          }, 0.1);
-        }
-
-        // Keyframe 90%: Scale down to 0.8, opacity to 0, blur to 5px (for blur cards)
-        tl.to(card, {
-          scale: 0.8,
-          opacity: 0,
-          filter: isBlurCard ? 'blur(5px)' : 'blur(0px)',
-          duration: 0.8,
-        }, 0.1);
+            start: 'top 100px',
+            // End is exactly the card height to ensure the next card arrives immediately
+            end: () => `+=${card.clientHeight}`, 
+            pin: true,
+            pinSpacing: true,
+            scrub: true, // Immediate response to eliminate the "dead" space
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            animation: gsap.timeline()
+              // Phase 1: Card is active and readable
+              .to(card, {
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                ease: 'none'
+              })
+              // Phase 2: Seamless transition out
+              .to(card, {
+                scale: 0.96,
+                opacity: 0,
+                filter: 'blur(10px)',
+                y: -40,
+                duration: 1,
+                ease: 'power1.inOut',
+              })
+          });
       });
     }, containerRef);
 
@@ -114,34 +98,30 @@ export default function ServiceTiers() {
   }, []);
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-gray-50 dark:bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-wider text-gray-600 mb-2">
+          <p className="text-sm uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
             {t('eyebrow')}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold dark:text-white">
             {t('title')}
           </h2>
         </div>
 
-        <div ref={containerRef} className="space-y-8">
-          {tiers.map((tier, index) => (
-            <div
-              key={index}
-              data-sticky-card
-              className={`${
-                index === 0 
-                  ? 'bg-white' 
-                  : 'ix_sticky-card backdrop-blur-sm bg-white/80'
-              } ${
-                index === 1 ? 'is-card-2' : index === 2 ? 'is-card-3' : ''
-              } ${
-                index > 0 ? 'ix_backdrop-filter-blur' : ''
-              } rounded-lg shadow-lg`}
-              style={{ transformOrigin: 'center center' }}
-            >
-              <Card className="border-0 shadow-none">
+        <div ref={containerRef} className="max-w-5xl mx-auto px-4 relative">
+        {tiers.map((tier, index) => (
+          <div
+            key={index}
+            data-sticky-card
+            className="bg-[#00353F]/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/10 transform-gpu will-change-transform-opacity"
+            style={{ 
+              transformOrigin: 'center center',
+              zIndex: index + 1,
+              backfaceVisibility: 'hidden'
+            }}
+          >
+              <Card className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="relative aspect-square rounded-lg overflow-hidden" style={{ position: 'relative' }}>
@@ -154,16 +134,20 @@ export default function ServiceTiers() {
                       />
                     </div>
                     <div className="space-y-4">
-                      <p className="text-sm uppercase tracking-wider text-gray-600">
+                      <p className="text-sm uppercase tracking-wider text-white/70">
                         {tier.eyebrow}
                       </p>
-                      <h3 className="text-2xl md:text-3xl font-bold">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white">
                         {tier.title}
                       </h3>
-                      <p className="text-lg text-gray-600">
+                      <p className="text-lg text-white/80">
                         {tier.description}
                       </p>
-                      <Button size="lg" asChild>
+                      <Button 
+                        size="lg" 
+                        asChild 
+                        className="bg-[#00353F] text-white hover:bg-[#00353F]/90 dark:bg-white dark:text-[#00353F] dark:hover:bg-white/90 border border-white/10 shadow-lg"
+                      >
                         <Link href="#contact">{tier.cta}</Link>
                       </Button>
                     </div>

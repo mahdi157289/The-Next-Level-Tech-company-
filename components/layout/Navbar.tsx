@@ -25,7 +25,8 @@ import {
   CircleDot, 
   Settings, 
   Rocket, 
-  Phone 
+  Phone,
+  MessageSquare
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -51,7 +52,7 @@ export default function Navbar() {
       // Bobbing animation for phone icon
       if (phoneRef.current) {
         gsap.to(phoneRef.current, {
-          yPercent: -20,
+          y: -8, // Use a small pixel value for more precise control
           duration: 1.5,
           repeat: -1,
           yoyo: true,
@@ -64,19 +65,19 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav ref={navRef} className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b dark:border-slate-800 transition-all duration-300">
+    <nav ref={navRef} className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b dark:border-slate-800 transition-all duration-300 [&.scrolled]:bg-transparent [&.scrolled]:border-transparent">
       <div className="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all">
         <div className="nav-inner flex justify-between items-center h-16 transition-all">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/images/logo.jpeg" alt="Logo" width={48} height={48} className="rounded-lg" />
-            <span className="font-medium text-lg hidden sm:block dark:text-white">{t('brand')}</span>
+            <span className="font-medium text-lg hidden sm:block dark:text-white nav-brand-text">{t('brand')}</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-4">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent dark:text-white">{t('services')}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent dark:text-white [&.scrolled]:text-white">{t('services')}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-0 p-4 md:w-[900px] lg:w-[1000px] md:grid-cols-4 mx-auto">
                       <div className="px-4 py-2">
@@ -150,30 +151,42 @@ export default function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <Link href="#about" className="text-sm font-medium hover:text-gray-600 px-4 py-2 dark:text-white">
+            <Link href="#about" className="text-sm font-medium hover:text-gray-600 px-4 py-2 dark:text-white nav-link">
               {t('about')}
             </Link>
-            <Link href="#blog" className="text-sm font-medium hover:text-gray-600 px-4 py-2 dark:text-white">
+            <Link href="#blog" className="text-sm font-medium hover:text-gray-600 px-4 py-2 dark:text-white nav-link">
               {t('blog')}
             </Link>
-            <Link href="#help" className="text-sm font-medium hover:text-gray-600 px-4 py-2 dark:text-white">
+            <Link href="#help" className="text-sm font-medium hover:text-gray-600 px-4 py-2 dark:text-white nav-link">
               {t('help')}
             </Link>
           </div>
 
           <div className={cn("hidden lg:block transition-all duration-500", isScrolled && "opacity-0 scale-90 pointer-events-none translate-x-12")}>
-            <Button>{t('startNow')}</Button>
+            <Button asChild>
+              <Link href="#contact">{t('startNow')}</Link>
+            </Button>
           </div>
 
           {/* Bobbing Phone Icon - appears inside the navbar container when scrolled */}
           <div 
             ref={phoneRef}
             className={cn(
-              "absolute right-4 z-[70] transition-all duration-500 pointer-events-none opacity-0 scale-0 flex items-center",
+              "absolute right-4 z-[70] transition-all duration-500 pointer-events-none opacity-0 scale-0 flex items-center gap-2",
               isScrolled && "opacity-100 scale-100 pointer-events-auto"
             )}
-            style={{ top: '50%', transform: 'translateY(-50%)' }}
+            style={{ top: '50%', transform: 'translateY(-50%)', marginTop: '4px' }}
           >
+            {/* Messages Circular Button */}
+            <Link 
+              href="#contact"
+              className="flex items-center justify-center w-10 h-10 bg-white/20 hover:bg-white/30 text-white rounded-full shadow-lg cursor-pointer transition-all hover:scale-110 backdrop-blur-md border border-white/30"
+              title="Send Message"
+            >
+              <MessageSquare className="h-5 w-5" />
+            </Link>
+
+            {/* Phone Icon Group */}
             <div className="group relative flex items-center justify-center">
               <div className="flex items-center justify-center w-10 h-10 bg-primary text-primary-foreground rounded-full shadow-lg cursor-pointer transition-transform hover:scale-110">
                 <Phone className="h-5 w-5" />

@@ -43,9 +43,9 @@ export default function HomePage() {
         <SectionWrapper id="services" className="bg-[#00353F]/90">
           <Services />
         </SectionWrapper>
-        <SectionWrapper id="service-tiers" className="bg-gray-50/90">
-          <ServiceTiers />
-        </SectionWrapper>
+        <SectionWrapper id="service-tiers" className="bg-gray-50/90 dark:bg-transparent" animate={false}>
+        <ServiceTiers />
+      </SectionWrapper>
         <SectionWrapper id="content" className="bg-white/90">
           <ContentSection />
         </SectionWrapper>
