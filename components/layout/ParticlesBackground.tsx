@@ -83,8 +83,8 @@ export default function ParticlesBackground() {
       fullScreen: { enable: false },
       particles: {
         number: { value: 40 }, // Reduced from 80 to 40 particles
-        color: { value: '#00353F' },
-        links: { enable: true, color: '#00353F', distance: 250, opacity: 0.2, width: 1 }, // Increased distance from 150 to 250
+        color: { value: '#000000' },
+        links: { enable: true, color: '#000000', distance: 250, opacity: 0.2, width: 1 }, // Increased distance from 150 to 250
         move: { enable: true, speed: 0.5, direction: 'none', outModes: { default: 'out' } },
         opacity: { value: 0.35 },
         size: { value: { min: 1, max: 3 } },
