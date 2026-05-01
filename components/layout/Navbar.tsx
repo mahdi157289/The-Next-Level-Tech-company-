@@ -66,11 +66,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav ref={navRef} className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b dark:border-slate-800 transition-all duration-300 [&.scrolled]:bg-transparent [&.scrolled]:border-transparent">
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b dark:border-slate-800 transition-all duration-300 [&.scrolled]:bg-transparent [&.scrolled]:border-transparent">
       <div className="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all">
         <div className="nav-inner flex justify-between items-center h-16 transition-all">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/images/logo.jpeg" alt="Logo" width={48} height={48} className="rounded-lg" />
+            <Image src="/images/logo.avif" alt="Logo" width={48} height={48} className="rounded-lg" />
             <span className="font-medium text-lg hidden sm:block dark:text-white nav-brand-text">{t('brand')}</span>
           </Link>
 
@@ -188,7 +188,7 @@ export default function Navbar() {
           <div 
             ref={phoneRef}
             className={cn(
-              "absolute right-4 z-[70] transition-all duration-500 pointer-events-none opacity-0 scale-0 flex items-center gap-2",
+              "absolute end-4 z-[70] transition-all duration-500 pointer-events-none opacity-0 scale-0 flex items-center gap-2",
               isScrolled && "opacity-100 scale-100 pointer-events-auto"
             )}
             style={{ top: '50%', transform: 'translateY(-50%)', marginTop: '4px' }}
@@ -209,7 +209,7 @@ export default function Navbar() {
               </div>
               
               {/* Tooltip/Number on Hover */}
-              <div className="absolute right-full mr-3 opacity-0 translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+              <div className="absolute end-full me-3 opacity-0 ltr:translate-x-4 rtl:-translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
                 <div className="bg-white dark:bg-slate-800 text-foreground px-4 py-2 rounded-lg shadow-xl border dark:border-slate-700 whitespace-nowrap font-bold">
                   +216 93 149 727
                 </div>

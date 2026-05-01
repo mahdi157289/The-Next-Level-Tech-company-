@@ -176,9 +176,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div ref={imagesRef} className="grid grid-cols-2 gap-3">
+          <div ref={imagesRef} className="hidden lg:grid grid-cols-2 gap-3">
             <div className="space-y-3">
-              <div className="relative aspect-[2/5] rounded-lg overflow-hidden border-2" style={{ position: 'relative', borderColor: '#00353f' }}>
+              <div className="relative aspect-[2/5] rounded-lg overflow-hidden border-2" style={{ borderColor: '#00353f' }}>
                 <Image
                   src="/images/4e140827-456d-4ff7-9e0d-7981e1b0f875.avif"
                   alt="Employee interacting with software"
@@ -190,7 +190,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="space-y-3">
-              <div className="relative aspect-[2/3] rounded-lg overflow-hidden border-2" style={{ position: 'relative', borderColor: '#00353f' }}>
+              <div className="relative aspect-[2/3] rounded-lg overflow-hidden border-2" style={{ borderColor: '#00353f' }}>
                 <Image
                   src="/images/23c333ef-fb7f-4a47-acbc-a50b49fb3fd8.avif"
                   alt="Professional office space"
@@ -200,7 +200,7 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="relative aspect-[2/2] rounded-lg overflow-hidden border-2" style={{ position: 'relative', borderColor: '#00353f' }}>
+              <div className="relative aspect-[2/2] rounded-lg overflow-hidden border-2" style={{ borderColor: '#00353f' }}>
                 <Image
                   src="/images/de1af6e6-8353-41e6-a3dc-a830586eb82d.avif"
                   alt="AI innovations"

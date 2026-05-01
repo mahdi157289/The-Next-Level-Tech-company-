@@ -22,9 +22,8 @@ export default function LanguageSwitcherBubble() {
 
   useEffect(() => {
     setMounted(true);
-    // Check initial theme
-    const isDarkMode = localStorage.theme === 'dark' || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    // Check initial theme - Default to light unless explicitly saved as dark
+    const isDarkMode = localStorage.theme === 'dark';
     
     setIsDark(isDarkMode);
     if (isDarkMode) {
@@ -56,12 +55,13 @@ export default function LanguageSwitcherBubble() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+    <div className="fixed bottom-28 lg:bottom-6 right-6 z-50 flex flex-col items-center gap-3">
       {/* Theme Toggle Bubble */}
       <Button
         onClick={toggleTheme}
-        className="rounded-full w-12 h-12 shadow-lg bg-background border-2 border-primary text-primary hover:bg-accent"
+        className="rounded-full w-12 h-12 shadow-lg bg-black text-white hover:bg-black/90 dark:bg-black dark:text-white dark:hover:bg-black/90 border border-white/20"
         size="icon"
+        variant="ghost"
         aria-label="Toggle theme"
       >
         {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -70,8 +70,8 @@ export default function LanguageSwitcherBubble() {
       <div className="relative">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full w-14 h-14 shadow-lg"
-          variant="default"
+          className="rounded-full w-14 h-14 shadow-lg bg-black text-white hover:bg-black/90 dark:bg-black dark:text-white dark:hover:bg-black/90 border border-white/10"
+          variant="ghost"
           aria-label="Change language"
         >
           <Languages className="h-5 w-5" />
@@ -84,7 +84,7 @@ export default function LanguageSwitcherBubble() {
               <button
                 key={lang.code}
                 onClick={() => switchLocale(lang.code)}
-                className={`w-full text-left px-4 py-2 rounded-md text-sm hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors ${
+                className={`w-full text-left px-4 py-2 rounded-md text-sm hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors text-gray-900 dark:text-white ${
                   locale === lang.code ? 'bg-gray-100 dark:bg-slate-700 font-semibold' : ''
                 }`}
               >

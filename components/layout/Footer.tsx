@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="flex flex-col items-start justify-center">
             <Link href="/" aria-label="Home" className="block">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo.avif"
                 alt="Logo"
                 width={320}
                 height={320}

@@ -1,9 +1,12 @@
 {
   "nav": {
     "brand": "The Next Level Tech Company",
+    "home": "Home",
     "services": "Services",
+    "solutions": "Solutions",
     "about": "About",
     "blog": "Blog",
+    "messages": "Messages",
     "help": "Help",
     "faq": "FAQ",
     "contact": "Contact",
@@ -79,10 +82,11 @@
       "description": "Craft emotional narratives and high-level strategy. Our expert marketers build your brand's voice and positioning with creativity.",
       "imageAlt": "team collaboration on marketing strategy"
     },
-    "viewDetails": "View details"
+    "viewDetails": "View details",
+    "getQuote": "Get a Quote"
   },
   "serviceTiers": {
-    "eyebrow": "Choose your perfect tech fit",
+    "eyebrow": "Our Solutions To",
     "title": "Elevate your digital experience",
     "static": {
       "eyebrow": "Static option",

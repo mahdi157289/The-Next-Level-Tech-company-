@@ -1,9 +1,12 @@
 {
   "nav": {
     "brand": "The Next Level Tech Company",
+    "home": "Accueil",
     "services": "Services",
+    "solutions": "Solutions",
     "about": "À propos",
     "blog": "Blog",
+    "messages": "Messages",
     "help": "Aide",
     "faq": "FAQ",
     "contact": "Contact",
@@ -79,10 +82,11 @@
       "description": "Créez des récits émotionnels et une stratégie de haut niveau. Nos experts construisent la voix et le positionnement de votre marque avec créativité.",
       "imageAlt": "collaboration d'équipe sur la stratégie marketing"
     },
-    "viewDetails": "Voir les détails"
+    "viewDetails": "Voir les détails",
+    "getQuote": "Demander un devis"
   },
   "serviceTiers": {
-    "eyebrow": "Choisissez votre ajustement technologique parfait",
+    "eyebrow": "Nos solutions pour",
     "title": "Élevez votre expérience numérique",
     "static": {
       "eyebrow": "Option statique",
@@ -156,6 +160,11 @@
         "category": "Automatisation",
         "title": "Travaillez plus intelligemment",
         "description": "Des flux de travail simples aux agents IA intelligents, nous vous aidons à automatiser la routine."
+      },
+      {
+        "category": "Marketing",
+        "title": "Élevez la présence de votre marque",
+        "description": "Combinez la précision de l'IA avec la créativité humaine pour atteindre votre audience et développer votre croissance."
       }
     ],
     "links": [

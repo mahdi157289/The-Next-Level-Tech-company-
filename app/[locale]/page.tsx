@@ -1,62 +1,56 @@
-'use client';
-
 import dynamic from 'next/dynamic';
-import TopBar from '../../components/layout/TopBar';
 import Navbar from '../../components/layout/Navbar';
 import Footer from '../../components/layout/Footer';
 import Hero from '../../components/sections/Hero';
-import LanguageSwitcherBubble from '../../components/i18n/LanguageSwitcherBubble';
-import ParticlesBackground from '../../components/layout/ParticlesBackground';
+import Services from '../../components/sections/Services';
+import ServiceTiers from '../../components/sections/ServiceTiers';
+import ContentSection from '../../components/sections/ContentSection';
+import FAQ from '../../components/sections/FAQ';
+import Contact from '../../components/sections/Contact';
 import SectionWrapper from '../../components/layout/SectionWrapper';
 
+// Temporarily commented out for debugging
+const ParticlesBackground = dynamic(
+  () => import('../../components/layout/ParticlesBackground'),
+  { ssr: false }
+);
 
-const Services = dynamic(() => import('../../components/sections/Services'), {
-  loading: () => <div className="py-24 bg-[#00353F]" aria-label="Loading services section" />,
-});
+const BottomNavbar = dynamic(
+  () => import('../../components/layout/BottomNavbar'),
+  { ssr: false }
+);
 
-const ServiceTiers = dynamic(() => import('../../components/sections/ServiceTiers'), {
-  loading: () => <div className="py-24 bg-gray-50" aria-label="Loading service tiers section" />,
-});
+const LanguageSwitcherBubble = dynamic(
+  () => import('../../components/i18n/LanguageSwitcherBubble'),
+  { ssr: false }
+);
 
-const ContentSection = dynamic(() => import('../../components/sections/ContentSection'), {
-  loading: () => <div className="py-24" aria-label="Loading content section" />,
-});
-
-const FAQ = dynamic(() => import('../../components/sections/FAQ'), {
-  loading: () => <div className="py-24 bg-gray-50" aria-label="Loading FAQ section" />,
-});
-
-const Contact = dynamic(() => import('../../components/sections/Contact'), {
-  loading: () => <div className="py-24" aria-label="Loading contact section" />,
-});
-
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       <ParticlesBackground />
-      <TopBar />
       <Navbar />
-      <main id="main-content" className="min-h-screen" role="main">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded z-50">
+        Skip to main content
+      </a>
+      <main id="main-content" className="pb-28 lg:pb-0">
         <SectionWrapper id="hero">
           <Hero />
         </SectionWrapper>
-        <SectionWrapper id="services" className="bg-[#00353F]/90">
+        <SectionWrapper id="services">
           <Services />
+          <ServiceTiers />
         </SectionWrapper>
-        <SectionWrapper id="service-tiers" className="bg-gray-50/90 dark:bg-transparent" animate={false}>
-        <ServiceTiers />
-      </SectionWrapper>
-        <SectionWrapper id="content" className="bg-white/90">
+        <SectionWrapper id="content">
           <ContentSection />
-        </SectionWrapper>
-        <SectionWrapper id="faq" className="bg-transparent">
           <FAQ />
         </SectionWrapper>
-        <SectionWrapper id="contact" className="bg-white/90">
+        <SectionWrapper id="contact">
           <Contact />
         </SectionWrapper>
       </main>
       <Footer />
+      <BottomNavbar />
       <LanguageSwitcherBubble />
     </>
   );
