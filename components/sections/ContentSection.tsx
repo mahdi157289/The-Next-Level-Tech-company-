@@ -116,7 +116,7 @@ export default function ContentSection() {
           {/* Featured Post - Large */}
           <Link href="#" className="content-item shrink-0 w-[85vw] snap-center md:w-auto md:col-span-2 md:row-span-2 group">
             <Card className="h-full hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] transition-all duration-500 overflow-hidden flex flex-col bg-[#00353F]/40 backdrop-blur-xl border border-white/10 rounded-3xl group-hover:border-white/30">
-              <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+              <div className="relative w-full flex-1 min-h-[450px] md:min-h-[600px] overflow-hidden">
                 <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}
@@ -125,17 +125,18 @@ export default function ContentSection() {
                   sizes="(max-width: 768px) 100vw, 66vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#00353F] via-[#00353F]/40 to-transparent opacity-90" />
-                <div className="absolute top-6 left-6">
-                  <Badge className="bg-teal-500 text-white border-none px-3 py-1 text-xs uppercase tracking-widest font-bold">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00353F] via-[#00353F]/40 to-transparent opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute top-8 left-8">
+                  <div className="px-4 py-1.5 rounded-full bg-teal-500/10 backdrop-blur-md border border-teal-500/30 text-teal-400 text-xs font-bold uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(20,184,166,0.2)]">
                     {featuredPost.category}
-                  </Badge>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 p-8 w-full">
-                  <h3 className="text-3xl md:text-4xl font-black mb-4 text-white transition-colors leading-tight">
+                <div className="absolute bottom-0 left-0 p-10 w-full transform transition-transform duration-500 group-hover:-translate-y-2">
+                  <h3 className="text-3xl md:text-5xl font-black mb-6 text-white leading-[1.1] tracking-tight">
                     {featuredPost.title}
                   </h3>
-                  <p className="text-white/80 text-base md:text-lg line-clamp-3 max-w-2xl">
+                  <div className="h-1 w-12 bg-teal-500 mb-6 rounded-full" />
+                  <p className="text-white/70 text-base md:text-xl line-clamp-3 max-w-2xl leading-relaxed">
                     {featuredPost.description}
                   </p>
                 </div>
@@ -155,17 +156,17 @@ export default function ContentSection() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#00353F] via-[#00353F]/60 to-transparent opacity-90" />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="outline" className="border-teal-500/50 text-teal-400 text-[10px] uppercase tracking-widest bg-black/20 backdrop-blur-md">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#00353F] via-[#00353F]/60 to-transparent opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute top-5 left-5">
+                    <div className="px-3 py-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white/90 text-[10px] font-bold uppercase tracking-[0.15em]">
                       {post.category}
-                    </Badge>
+                    </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 p-6 w-full">
-                    <h4 className="text-xl font-black mb-2 text-white transition-colors line-clamp-2">
+                  <div className="absolute bottom-0 left-0 p-7 w-full transform transition-transform duration-500 group-hover:-translate-y-1">
+                    <h4 className="text-xl font-bold mb-3 text-white leading-snug">
                       {post.title}
                     </h4>
-                    <p className="text-white/70 text-sm line-clamp-3">
+                    <p className="text-white/60 text-sm line-clamp-2 leading-relaxed">
                       {post.description}
                     </p>
                   </div>

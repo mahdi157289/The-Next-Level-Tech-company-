@@ -110,23 +110,33 @@ export default function ServiceTiers() {
         cards.forEach((card) => {
           ScrollTrigger.create({
             trigger: card,
-            start: 'top 120px',
-            end: () => `+=${card.clientHeight * 0.8}`,
+            start: 'top 100px', // Adjusted for cleaner head-on positioning
+            end: 'bottom top', 
             pin: true,
-            pinSpacing: true,
+            pinSpacing: false, // Prevents the "gap" and allows stacking
             scrub: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
             animation: gsap.timeline()
               .to(card, { 
-                opacity: 0, 
-                scale: 0.92, 
-                filter: 'blur(25px)', 
-                y: -60, 
+                scale: 0.9, 
+                opacity: 0.5,
+                filter: 'blur(8px) brightness(0.7)', // Premium depth effect
+                transformOrigin: 'top center',
                 duration: 1, 
-                ease: 'power2.in' 
+                ease: 'none' 
               }),
           });
+        });
+
+        // Add a "spacer" scroll trigger to the container to ensure scroll room
+        ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: 'top top',
+          end: 'bottom bottom',
+          onRefresh: (self) => {
+             // ensure container has height for children
+          }
         });
       }, containerRef);
       return () => ctx.revert();
@@ -248,7 +258,7 @@ export default function ServiceTiers() {
             <div
               key={index}
               data-sticky-card
-              className={`bg-[#00353F]/85 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 transform-gpu will-change-transform brightness-110 ${index !== 0 ? '-mt-32' : ''}`}
+              className="bg-[#00353F]/90 backdrop-blur-2xl rounded-[2rem] shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.5)] border border-white/10 transform-gpu will-change-transform mb-20 md:mb-32"
               style={{
                 transformOrigin: 'center center',
                 zIndex: index + 1,

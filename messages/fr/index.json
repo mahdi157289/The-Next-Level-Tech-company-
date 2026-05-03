@@ -40,18 +40,30 @@
     },
     "simpleAutomation": {
       "title": "Automatisation Simple",
-      "description": "Rationalisez vos tâches répétitives avec des flux de travail efficaces et rapides. Parfait pour les petites entreprises cherchant à optimiser leurs opérations quotidiennes.",
-      "imageAlt": "visualisation de l'automatisation simple des flux de travail numériques"
+      "description": "Simplifiez vos tâches répétitives avec des flux de travail efficaces. Parfait pour les petites entreprises cherchant à optimiser leurs opérations quotidiennes.",
+      "imageAlt": "visualisation d'une automatisation de flux numérique simple",
+      "highlight1": "Automatisation e-mails & formulaires",
+      "highlight2": "Synchronisation des stocks",
+      "highlight3": "Génération de factures",
+      "highlight4": "Saisie de données CRM"
     },
     "aiAgentAutomation": {
       "title": "Automatisation par Agents IA",
-      "description": "Déployez des agents IA intelligents qui gèrent de manière autonome la prise de décision complexe et les interactions avec les clients, libérant ainsi du temps pour l'innovation.",
-      "imageAlt": "visualisation d'agents IA avancés au travail"
+      "description": "Déployez des agents IA intelligents qui gèrent les décisions complexes et les interactions clients de manière autonome, libérant ainsi votre équipe.",
+      "imageAlt": "visualisation d'agents ia avancés au travail",
+      "highlight1": "Support client IA 24/7",
+      "highlight2": "Qualification de leads automatisée",
+      "highlight3": "Planification prédictive",
+      "highlight4": "Recherche de connaissances internes"
     },
     "websiteCreation": {
-      "title": "Création de site web",
-      "description": "Lancez votre vision avec un site web qui correspond à votre style—choisissez parmi des versions statiques, standard ou avancées. Nous vous guiderons à chaque étape, rendant le processus simple et excitant.",
-      "imageAlt": "image d'un client interagissant avec du contenu numérique"
+      "title": "Création de sites web",
+      "description": "Lancez votre vision avec un site web à votre image—statique, standard ou avancé. Nous vous guidons à chaque étape pour un processus simple et passionnant.",
+      "imageAlt": "image d'un client interagissant avec du contenu numérique",
+      "highlight1": "Design UI/UX sur mesure",
+      "highlight2": "Focus SEO & Performance",
+      "highlight3": "Intégration CMS & Blog",
+      "highlight4": "Mise en page responsive"
     },
     "appDevelopment": {
       "title": "Développement d'applications",
@@ -64,23 +76,39 @@
     },
     "dataOrganization": {
       "title": "Organisation des données",
-      "description": "Donnez du sens à vos données avec clarté. Nous organisons, structurons et rationalisons vos informations, afin que vous puissiez vous concentrer sur ce qui compte et grandir en toute confiance.",
-      "imageAlt": "image de technologie futuriste"
+      "description": "Donnez du sens à vos données. Nous organisons, structurons et simplifions vos informations pour que vous puissiez vous concentrer sur l'essentiel.",
+      "imageAlt": "image de technologie futuriste",
+      "highlight1": "Migration de base de données",
+      "highlight2": "Nettoyage de données & ETL",
+      "highlight3": "Stockage structuré",
+      "highlight4": "Entreposage de données cloud"
     },
     "analyticsSolutions": {
-      "title": "Solutions d'analyse",
-      "description": "Découvrez l'histoire derrière vos chiffres. Nos analyses transforment les données brutes en insights, vous aidant à repérer les tendances, saisir les opportunités et planifier votre prochaine étape.",
-      "imageAlt": "image d'un affichage de gadgets technologiques populaires"
+      "title": "Solutions analytiques",
+      "description": "Découvrez l'histoire derrière vos chiffres. Nos analyses transforment vos données en insights pour anticiper les tendances et opportunités.",
+      "imageAlt": "affichage de gadgets technologiques populaires",
+      "highlight1": "Tableaux de bord interactifs",
+      "highlight2": "Suivi des comportements",
+      "highlight3": "Prévisions de ventes",
+      "highlight4": "Rapports personnalisés"
     },
     "marketingAI": {
       "title": "Agents Marketing IA",
-      "description": "Boostez votre portée avec un engagement automatisé 24/7. Nos agents IA optimisent les publicités, adaptent le contenu et interagissent instantanément avec les clients.",
-      "imageAlt": "visualisation du marketing par réseau neuronal ia"
+      "description": "Boostez votre portée avec un engagement automatisé 24/7. Nos agents IA optimisent vos publicités et interagissent instantanément.",
+      "imageAlt": "visualisation d'un réseau de neurones ia marketing",
+      "highlight1": "Optimisation pub automatisée",
+      "highlight2": "Création de contenu à l'échelle",
+      "highlight3": "Engagement instantané",
+      "highlight4": "Retargeting intelligent"
     },
     "marketingHuman": {
       "title": "Marketeurs Humains",
-      "description": "Créez des récits émotionnels et une stratégie de haut niveau. Nos experts construisent la voix et le positionnement de votre marque avec créativité.",
-      "imageAlt": "collaboration d'équipe sur la stratégie marketing"
+      "description": "Créez des récits émotionnels et une stratégie de haut niveau. Nos experts bâtissent l'identité de votre marque avec créativité.",
+      "imageAlt": "collaboration d'équipe sur une stratégie marketing",
+      "highlight1": "Storytelling émotionnel",
+      "highlight2": "Positionnement de marque",
+      "highlight3": "Stratégie créative",
+      "highlight4": "Relations publiques"
     },
     "viewDetails": "Voir les détails",
     "getQuote": "Demander un devis"

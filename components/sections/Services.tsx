@@ -6,9 +6,24 @@ import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import {
-  Globe, Users, CheckCircle, BarChart3,
-  Bot, Megaphone, ArrowLeftRight, Zap, Cpu,
-  ChevronLeft, ChevronRight,
+  Globe, 
+  Smartphone, 
+  Database, 
+  Bot, 
+  Megaphone, 
+  BarChart, 
+  CircleDot, 
+  Settings, 
+  Rocket, 
+  Phone,
+  MessageSquare,
+  ArrowLeftRight,
+  Zap,
+  Cpu,
+  CheckCircle,
+  Users,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 
@@ -33,11 +48,12 @@ function renderIcon(name: string, cls: string) {
     case 'Globe':       return <Globe        className={cls} />;
     case 'Users':       return <Users        className={cls} />;
     case 'CheckCircle': return <CheckCircle  className={cls} />;
-    case 'BarChart3':   return <BarChart3    className={cls} />;
+    case 'BarChart':    return <BarChart     className={cls} />;
     case 'Bot':         return <Bot          className={cls} />;
     case 'Megaphone':   return <Megaphone    className={cls} />;
     case 'Zap':         return <Zap          className={cls} />;
     case 'Cpu':         return <Cpu          className={cls} />;
+    case 'Database':    return <Database     className={cls} />;
     default:            return null;
   }
 }
@@ -90,7 +106,7 @@ function MobileCard({ item, t }: { item: ServiceItem; t: ReturnType<typeof useTr
 /* ─── desktop card pair ──────────────────────────────────────────────────── */
 function DesktopPair({
   items,
-  expanded,
+  expandedSide,
   setExpanded,
   leftRef,
   rightRef,
@@ -99,15 +115,19 @@ function DesktopPair({
   isRtl,
 }: {
   items: [ServiceItem, ServiceItem];
-  expanded: boolean;
-  setExpanded: (v: boolean) => void;
+  expandedSide: 'left' | 'right' | null;
+  setExpanded: (v: 'left' | 'right' | null) => void;
   leftRef: React.RefObject<HTMLDivElement>;
   rightRef: React.RefObject<HTMLDivElement>;
   gridRef: React.RefObject<HTMLDivElement>;
   t: ReturnType<typeof useTranslations>;
   isRtl: boolean;
 }) {
-  const cols = expanded ? 'grid-cols-[2fr_1fr]' : 'grid-cols-[1fr_2fr]';
+  const cols = expandedSide === 'left' 
+    ? 'grid-cols-[2fr_1fr]' 
+    : expandedSide === 'right' 
+      ? 'grid-cols-[1fr_2fr]' 
+      : 'grid-cols-[1fr_1fr]';
 
   return (
     <div
@@ -118,8 +138,8 @@ function DesktopPair({
       <Card
         ref={leftRef}
         className="service-card group h-full bg-[#020817]/90 backdrop-blur-xl border-none rounded-none overflow-hidden transition-all duration-500 cursor-pointer relative"
-        data-big={expanded ? 'true' : undefined}
-        onClick={() => setExpanded(true)}
+        data-big={expandedSide === 'left' ? 'true' : undefined}
+        onClick={() => setExpanded(expandedSide === 'left' ? null : 'left')}
       >
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-teal-500/0 group-hover:bg-teal-500/[0.03] transition-colors duration-700 pointer-events-none" />
@@ -133,16 +153,26 @@ function DesktopPair({
           </div>
         </div>
         
-        <CardContent className={`${expanded ? 'p-10' : 'p-6'} flex flex-col h-full transition-[padding] duration-500 relative z-10`}>
-          <h4 className={`${expanded ? 'text-3xl' : 'text-lg'} font-bold mb-4 flex items-center gap-3 text-white transition-all duration-500`}>
-            <div className={`p-2 rounded-lg bg-white/5 border border-white/10 ${expanded ? 'scale-110' : 'scale-100'}`}>
-              {renderIcon(items[0].icon, `${expanded ? 'h-7 w-7' : 'h-6 w-6'} text-teal-400`)}
+        <CardContent className={`${expandedSide === 'left' ? 'p-10' : 'p-6'} flex flex-col h-full transition-[padding] duration-500 relative z-10`}>
+          <h4 className={`${expandedSide === 'left' ? 'text-3xl' : 'text-lg'} font-bold mb-4 flex items-center gap-3 text-white transition-all duration-500`}>
+            <div className={`p-2 rounded-lg bg-white/5 border border-white/10 ${expandedSide === 'left' ? 'scale-110' : 'scale-100'}`}>
+              {renderIcon(items[0].icon, `${expandedSide === 'left' ? 'h-7 w-7' : 'h-6 w-6'} text-teal-400`)}
             </div>
             {items[0].title}
           </h4>
-          <p className={`text-gray-400 leading-relaxed ${expanded ? 'text-lg mb-8 max-w-2xl' : 'text-sm mb-4'}`}>
+          <p className={`text-gray-400 leading-relaxed ${expandedSide === 'left' ? 'text-lg mb-8 max-w-2xl' : 'text-sm mb-4'}`}>
             {items[0].description}
           </p>
+          {items[0].highlights && expandedSide === 'left' && (
+            <ul className="mb-8 grid grid-cols-2 gap-4">
+              {items[0].highlights.map((h, i) => (
+                <li key={i} className="flex items-center gap-2 text-sm text-gray-300 group/item">
+                  <div className="h-1.5 w-1.5 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(20,184,166,0.8)]" />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          )}
           
           <div className="flex gap-4 mt-auto">
             <Button variant="ghost" className="flex-1 border border-white/10 hover:bg-white/5 text-white/70 hover:text-white transition-all uppercase tracking-widest text-[10px] h-12">
@@ -159,8 +189,8 @@ function DesktopPair({
       <Card
         ref={rightRef}
         className="service-card group h-full bg-[#020817]/90 backdrop-blur-xl border-none rounded-none overflow-hidden transition-all duration-500 cursor-pointer relative"
-        data-big={!expanded ? 'true' : undefined}
-        onClick={() => setExpanded(false)}
+        data-big={expandedSide === 'right' ? 'true' : undefined}
+        onClick={() => setExpanded(expandedSide === 'right' ? null : 'right')}
       >
         <div className="absolute inset-0 bg-teal-500/0 group-hover:bg-teal-500/[0.03] transition-colors duration-700 pointer-events-none" />
 
@@ -172,17 +202,17 @@ function DesktopPair({
           </div>
         </div>
         
-        <CardContent className={`${expanded ? 'p-6' : 'p-10'} flex flex-col h-full transition-[padding] duration-500 relative z-10`}>
-          <h4 className={`${expanded ? 'text-lg' : 'text-3xl'} font-bold mb-4 flex items-center gap-3 text-white transition-all duration-500`}>
-            <div className={`p-2 rounded-lg bg-white/5 border border-white/10 ${expanded ? 'scale-100' : 'scale-110'}`}>
-              {renderIcon(items[1].icon, `${expanded ? 'h-6 w-6' : 'h-7 w-7'} text-teal-400`)}
+        <CardContent className={`${expandedSide === 'right' ? 'p-10' : 'p-6'} flex flex-col h-full transition-[padding] duration-500 relative z-10`}>
+          <h4 className={`${expandedSide === 'right' ? 'text-3xl' : 'text-lg'} font-bold mb-4 flex items-center gap-3 text-white transition-all duration-500`}>
+            <div className={`p-2 rounded-lg bg-white/5 border border-white/10 ${expandedSide === 'right' ? 'scale-110' : 'scale-100'}`}>
+              {renderIcon(items[1].icon, `${expandedSide === 'right' ? 'h-7 w-7' : 'h-6 w-6'} text-teal-400`)}
             </div>
             {items[1].title}
           </h4>
-          <p className={`text-gray-400 leading-relaxed ${expanded ? 'text-sm mb-4' : 'text-lg mb-8 max-w-2xl'}`}>
+          <p className={`text-gray-400 leading-relaxed ${expandedSide === 'right' ? 'text-lg mb-8 max-w-2xl' : 'text-sm mb-4'}`}>
             {items[1].description}
           </p>
-          {items[1].highlights && !expanded && (
+          {items[1].highlights && expandedSide === 'right' && (
             <ul className="mb-8 grid grid-cols-2 gap-4">
               {items[1].highlights.map((h, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm text-gray-300 group/item">
@@ -209,15 +239,17 @@ function DesktopPair({
         style={{
           top: '50%',
           left: isRtl 
-            ? (expanded ? 'calc(33.333% + 0px)' : 'calc(66.666% + 0px)')
-            : (expanded ? 'calc(66.666% + 0px)' : 'calc(33.333% + 0px)'),
-          transition: 'left 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            ? (expandedSide === 'left' ? '33.33%' : expandedSide === 'right' ? '66.67%' : '50%')
+            : (expandedSide === 'left' ? '66.67%' : expandedSide === 'right' ? '33.33%' : '50%'),
+          transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+          opacity: expandedSide ? 1 : 0,
+          pointerEvents: expandedSide ? 'auto' : 'none'
         }}
       >
         <button
           onClick={(e) => {
             e.stopPropagation();
-            setExpanded(!expanded);
+            setExpanded(expandedSide === 'left' ? 'right' : 'left');
           }}
           className="group/btn relative rounded-full w-14 h-14 bg-white shadow-[0_0_30px_rgba(255,255,255,0.3)] ring-1 ring-white/50 hover:scale-110 active:scale-90 transition-all flex items-center justify-center overflow-hidden"
           aria-label="Swap cards"
@@ -239,10 +271,10 @@ export default function Services() {
   const mobileScrollRef = useRef<HTMLDivElement>(null);
 
   /* desktop expand states */
-  const [expanded1, setExpanded1] = useState(false);
-  const [expanded2, setExpanded2] = useState(false);
-  const [expanded3, setExpanded3] = useState(false);
-  const [expanded4, setExpanded4] = useState(false);
+  const [expanded1, setExpanded1] = useState<'left' | 'right' | null>(null);
+  const [expanded2, setExpanded2] = useState<'left' | 'right' | null>(null);
+  const [expanded3, setExpanded3] = useState<'left' | 'right' | null>(null);
+  const [expanded4, setExpanded4] = useState<'left' | 'right' | null>(null);
 
   /* desktop card/grid refs */
   const g1 = useRef<HTMLDivElement>(null), l1 = useRef<HTMLDivElement>(null), r1 = useRef<HTMLDivElement>(null);
@@ -267,29 +299,85 @@ export default function Services() {
     {
       labelKey: 'groups.development',
       items: [
-        { icon: 'Globe', title: t('websiteCreation.title'), description: t('websiteCreation.description'), image: '/images/f46a60f7-a9a2-49b7-954e-34c806953ad7.avif', imageAlt: t('websiteCreation.imageAlt') },
-        { icon: 'Users', title: t('appDevelopment.title'), description: t('appDevelopment.description'), image: '/images/7d7550b9-9b1a-4e90-9bb5-0cb57ea28d28.avif', imageAlt: t('appDevelopment.imageAlt'), highlights: [t('appDevelopment.highlight1'), t('appDevelopment.highlight2'), t('appDevelopment.highlight3'), t('appDevelopment.highlight4')] },
+        { 
+          icon: 'Globe', 
+          title: t('websiteCreation.title'), 
+          description: t('websiteCreation.description'), 
+          image: '/images/f46a60f7-a9a2-49b7-954e-34c806953ad7.avif', 
+          imageAlt: t('websiteCreation.imageAlt'),
+          highlights: [t('websiteCreation.highlight1'), t('websiteCreation.highlight2'), t('websiteCreation.highlight3'), t('websiteCreation.highlight4')]
+        },
+        { 
+          icon: 'Users', 
+          title: t('appDevelopment.title'), 
+          description: t('appDevelopment.description'), 
+          image: '/images/7d7550b9-9b1a-4e90-9bb5-0cb57ea28d28.avif', 
+          imageAlt: t('appDevelopment.imageAlt'), 
+          highlights: [t('appDevelopment.highlight1'), t('appDevelopment.highlight2'), t('appDevelopment.highlight3'), t('appDevelopment.highlight4')] 
+        },
       ],
     },
     {
       labelKey: 'groups.data',
       items: [
-        { icon: 'BarChart3', title: t('dataOrganization.title'), description: t('dataOrganization.description'), image: '/images/035762ab-b59c-48b6-b5d1-1dd2db2262b3.avif', imageAlt: t('dataOrganization.imageAlt') },
-        { icon: 'CheckCircle', title: t('analyticsSolutions.title'), description: t('analyticsSolutions.description'), image: '/images/bf90027e-1724-4b82-b430-963d19430087.avif', imageAlt: t('analyticsSolutions.imageAlt') },
+        { 
+          icon: 'Database', 
+          title: t('dataOrganization.title'), 
+          description: t('dataOrganization.description'), 
+          image: '/images/035762ab-b59c-48b6-b5d1-1dd2db2262b3.avif', 
+          imageAlt: t('dataOrganization.imageAlt'),
+          highlights: [t('dataOrganization.highlight1'), t('dataOrganization.highlight2'), t('dataOrganization.highlight3'), t('dataOrganization.highlight4')]
+        },
+        { 
+          icon: 'BarChart', 
+          title: t('analyticsSolutions.title'), 
+          description: t('analyticsSolutions.description'), 
+          image: '/images/bf90027e-1724-4b82-b430-963d19430087.avif', 
+          imageAlt: t('analyticsSolutions.imageAlt'),
+          highlights: [t('analyticsSolutions.highlight1'), t('analyticsSolutions.highlight2'), t('analyticsSolutions.highlight3'), t('analyticsSolutions.highlight4')]
+        },
       ],
     },
     {
       labelKey: 'groups.marketing',
       items: [
-        { icon: 'Megaphone', title: t('marketingHuman.title'), description: t('marketingHuman.description'), image: '/images/8c377ce8-99cc-44ef-9617-c0d570c3a9b4.avif', imageAlt: t('marketingHuman.imageAlt') },
-        { icon: 'Bot', title: t('marketingAI.title'), description: t('marketingAI.description'), image: '/images/23c333ef-fb7f-4a47-acbc-a50b49fb3fd8.avif', imageAlt: t('marketingAI.imageAlt') },
+        { 
+          icon: 'Megaphone', 
+          title: t('marketingHuman.title'), 
+          description: t('marketingHuman.description'), 
+          image: '/images/8c377ce8-99cc-44ef-9617-c0d570c3a9b4.avif', 
+          imageAlt: t('marketingHuman.imageAlt'),
+          highlights: [t('marketingHuman.highlight1'), t('marketingHuman.highlight2'), t('marketingHuman.highlight3'), t('marketingHuman.highlight4')]
+        },
+        { 
+          icon: 'Bot', 
+          title: t('marketingAI.title'), 
+          description: t('marketingAI.description'), 
+          image: '/images/23c333ef-fb7f-4a47-acbc-a50b49fb3fd8.avif', 
+          imageAlt: t('marketingAI.imageAlt'),
+          highlights: [t('marketingAI.highlight1'), t('marketingAI.highlight2'), t('marketingAI.highlight3'), t('marketingAI.highlight4')]
+        },
       ],
     },
     {
       labelKey: 'groups.automations',
       items: [
-        { icon: 'Bot', title: t('aiAgentAutomation.title'), description: t('aiAgentAutomation.description'), image: '/images/ai-agent-v3.png', imageAlt: t('aiAgentAutomation.imageAlt') },
-        { icon: 'Cpu', title: t('simpleAutomation.title'), description: t('simpleAutomation.description'), image: '/images/simple-automation-v2.avif', imageAlt: t('simpleAutomation.imageAlt') },
+        { 
+          icon: 'Bot', 
+          title: t('aiAgentAutomation.title'), 
+          description: t('aiAgentAutomation.description'), 
+          image: '/images/ai-agent-v3.png', 
+          imageAlt: t('aiAgentAutomation.imageAlt'),
+          highlights: [t('aiAgentAutomation.highlight1'), t('aiAgentAutomation.highlight2'), t('aiAgentAutomation.highlight3'), t('aiAgentAutomation.highlight4')]
+        },
+        { 
+          icon: 'Cpu', 
+          title: t('simpleAutomation.title'), 
+          description: t('simpleAutomation.description'), 
+          image: '/images/simple-automation-v2.avif', 
+          imageAlt: t('simpleAutomation.imageAlt'),
+          highlights: [t('simpleAutomation.highlight1'), t('simpleAutomation.highlight2'), t('simpleAutomation.highlight3'), t('simpleAutomation.highlight4')]
+        },
       ],
     },
   ];
@@ -324,13 +412,15 @@ export default function Services() {
     gridEl: HTMLDivElement | null,
     leftEl: HTMLDivElement | null,
     rightEl: HTMLDivElement | null,
-    exp: boolean,
+    exp: 'left' | 'right' | null,
   ) => {
     const isDesktop = typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches;
     if (!gridEl || !isDesktop) return;
-    gsap.to(gridEl, { duration: 0.5, ease: 'power2.out', gridTemplateColumns: exp ? '2fr 1fr' : '1fr 2fr' });
-    gsap.to(leftEl, { duration: 0.4, ease: 'power2.out', scale: exp ? 1 : 0.98 });
-    gsap.to(rightEl, { duration: 0.4, ease: 'power2.out', scale: exp ? 0.98 : 1 });
+    
+    const cols = exp === 'left' ? '2fr 1fr' : exp === 'right' ? '1fr 2fr' : '1fr 1fr';
+    gsap.to(gridEl, { duration: 0.5, ease: 'power2.out', gridTemplateColumns: cols });
+    gsap.to(leftEl, { duration: 0.4, ease: 'power2.out', scale: exp === 'left' ? 1 : 0.98 });
+    gsap.to(rightEl, { duration: 0.4, ease: 'power2.out', scale: exp === 'right' ? 1 : 0.98 });
   };
 
   useEffect(() => animateExpand(g1.current, l1.current, r1.current, expanded1), [expanded1]);
@@ -339,10 +429,10 @@ export default function Services() {
   useEffect(() => animateExpand(g4.current, l4.current, r4.current, expanded4), [expanded4]);
 
   const desktopProps = [
-    { expanded: expanded1, setExpanded: setExpanded1, gridRef: g1, leftRef: l1, rightRef: r1 },
-    { expanded: expanded2, setExpanded: setExpanded2, gridRef: g2, leftRef: l2, rightRef: r2 },
-    { expanded: expanded3, setExpanded: setExpanded3, gridRef: g3, leftRef: l3, rightRef: r3 },
-    { expanded: expanded4, setExpanded: setExpanded4, gridRef: g4, leftRef: l4, rightRef: r4 },
+    { expandedSide: expanded1, setExpanded: setExpanded1, gridRef: g1, leftRef: l1, rightRef: r1 },
+    { expandedSide: expanded2, setExpanded: setExpanded2, gridRef: g2, leftRef: l2, rightRef: r2 },
+    { expandedSide: expanded3, setExpanded: setExpanded3, gridRef: g3, leftRef: l3, rightRef: r3 },
+    { expandedSide: expanded4, setExpanded: setExpanded4, gridRef: g4, leftRef: l4, rightRef: r4 },
   ];
 
   return (
@@ -483,7 +573,7 @@ export default function Services() {
               </div>
               <DesktopPair
                 items={[group.items[0], group.items[1]]}
-                expanded={desktopProps[gi].expanded}
+                expandedSide={desktopProps[gi].expandedSide}
                 setExpanded={desktopProps[gi].setExpanded}
                 gridRef={desktopProps[gi].gridRef}
                 leftRef={desktopProps[gi].leftRef}

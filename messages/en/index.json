@@ -41,17 +41,29 @@
     "simpleAutomation": {
       "title": "Simple Automation",
       "description": "Streamline your repetitive tasks with efficient, time-saving workflows. Perfect for small businesses looking to optimize their daily operations.",
-      "imageAlt": "visualization of simple digital workflow automation"
+      "imageAlt": "visualization of simple digital workflow automation",
+      "highlight1": "Email & form automation",
+      "highlight2": "Inventory management syncing",
+      "highlight3": "Invoice generation",
+      "highlight4": "CRM data entry"
     },
     "aiAgentAutomation": {
       "title": "AI Agent Automation",
       "description": "Deploy intelligent AI agents that handle complex decision-making and customer interactions autonomously, giving your team more space to innovate.",
-      "imageAlt": "visualization of advanced ai agents at work"
+      "imageAlt": "visualization of advanced ai agents at work",
+      "highlight1": "24/7 AI Customer Support",
+      "highlight2": "Automated Lead Qualification",
+      "highlight3": "Predictive Task Scheduling",
+      "highlight4": "Internal Knowledge Search"
     },
     "websiteCreation": {
       "title": "Website creation",
       "description": "Launch your vision with a website that fits your style—choose from static, standard, or advanced builds. We'll guide you every step, making the process simple and exciting.",
-      "imageAlt": "image of a client interacting with digital content"
+      "imageAlt": "image of a client interacting with digital content",
+      "highlight1": "Custom UI/UX Design",
+      "highlight2": "SEO & Performance focus",
+      "highlight3": "CMS & Blog integration",
+      "highlight4": "Responsive layout"
     },
     "appDevelopment": {
       "title": "App development",
@@ -65,22 +77,38 @@
     "dataOrganization": {
       "title": "Data organization",
       "description": "Make sense of your data with clarity. We organize, structure, and streamline your information, so you can focus on what matters and grow with confidence.",
-      "imageAlt": "image of futuristic technology"
+      "imageAlt": "image of futuristic technology",
+      "highlight1": "Database migration",
+      "highlight2": "Data cleaning & ETL",
+      "highlight3": "Structured storage",
+      "highlight4": "Cloud data warehousing"
     },
     "analyticsSolutions": {
       "title": "Analytics solutions",
       "description": "See the story behind your numbers. Our analytics turn raw data into insights, helping you spot trends, seize opportunities, and plan your next move.",
-      "imageAlt": "image of popular tech gadgets display"
+      "imageAlt": "image of popular tech gadgets display",
+      "highlight1": "Interactive Dashboards",
+      "highlight2": "Behavior tracking",
+      "highlight3": "Sales forecasting",
+      "highlight4": "Custom reporting"
     },
     "marketingAI": {
       "title": "AI Marketing Agents",
       "description": "Boost your reach with 24/7 automated engagement. Our AI agents optimize ads, scale content, and interact with customers instantly.",
-      "imageAlt": "visualization of ai neural network marketing"
+      "imageAlt": "visualization of ai neural network marketing",
+      "highlight1": "Automated Ad optimization",
+      "highlight2": "Content scale-up",
+      "highlight3": "Instant engagement",
+      "highlight4": "Smart Retargeting"
     },
     "marketingHuman": {
       "title": "Human Marketers",
       "description": "Craft emotional narratives and high-level strategy. Our expert marketers build your brand's voice and positioning with creativity.",
-      "imageAlt": "team collaboration on marketing strategy"
+      "imageAlt": "team collaboration on marketing strategy",
+      "highlight1": "Emotional Storytelling",
+      "highlight2": "Brand Positioning",
+      "highlight3": "Creative Strategy",
+      "highlight4": "High-level Outreach"
     },
     "viewDetails": "View details",
     "getQuote": "Get a Quote"

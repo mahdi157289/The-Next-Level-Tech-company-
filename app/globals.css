@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Cache Buster: 12345 */
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -100,6 +102,12 @@ nav.scrolled .nav-inner .nav-link:hover {
   transform: translateX(30px);
 }
 
+
 [dir="ltr"] .gsap-slide-in {
   transform: translateX(-30px);
 }
+
+.ease-gooey {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
