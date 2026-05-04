@@ -228,7 +228,6 @@ const ListItem = React.forwardRef<
 >(({ className, title, children, icon: Icon, ...props }, ref) => {
   return (
     <li>
-      {/* @ts-expect-error - suppress Radix NavigationMenuLink asChild type mismatch */}
       <NavigationMenuLink asChild>
         <a
           ref={ref}
