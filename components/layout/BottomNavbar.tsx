@@ -1,15 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { Home, Briefcase, BookOpen, Mail, Layers, MessageSquare } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-
-// Placeholder icons to avoid lucide-react module resolution issues during debugging
-const Home = (props: any) => <div {...props}>H</div>;
-const Briefcase = (props: any) => <div {...props}>B</div>;
-const BookOpen = (props: any) => <div {...props}>L</div>;
-const Mail = (props: any) => <div {...props}>M</div>;
-const Layers = (props: any) => <div {...props}>S</div>;
-const MessageSquare = (props: any) => <div {...props}>C</div>;
 
 interface NavItem {
   key: string;
@@ -23,13 +16,13 @@ export default function BottomNavbar() {
   const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
-  const navItems: NavItem[] = [
-    { key: 'solutions', icon: <Layers />,        sectionId: 'solutions' },
-    { key: 'services',  icon: <Briefcase />,     sectionId: 'services' },
-    { key: 'home',      icon: <Home />,          sectionId: 'hero' },
-    { key: 'blog',      icon: <BookOpen />,      sectionId: 'blog' },
-    { key: 'messages',  icon: <MessageSquare />, sectionId: 'contact' },
-  ];
+  const navItems: NavItem[] = useMemo(() => [
+    { key: 'solutions', icon: <Layers size={22} />,        sectionId: 'solutions' },
+    { key: 'services',  icon: <Briefcase size={22} />,     sectionId: 'services' },
+    { key: 'home',      icon: <Home size={22} />,          sectionId: 'hero' },
+    { key: 'blog',      icon: <BookOpen size={22} />,      sectionId: 'blog' },
+    { key: 'messages',  icon: <MessageSquare size={22} />, sectionId: 'contact' },
+  ], []);
 
   useEffect(() => {
     setMounted(true);
@@ -65,7 +58,7 @@ export default function BottomNavbar() {
     });
 
     return () => observer.disconnect();
-  }, [mounted]);
+  }, [mounted, navItems]);
 
   const handleClick = (index: number, sectionId: string) => {
     setActiveIndex(index);
@@ -97,7 +90,7 @@ export default function BottomNavbar() {
         >
           {/* Floating Bubble Indicator */}
           <div
-            className="absolute top-[-18px] w-[52px] h-[52px] rounded-full flex items-center justify-center bg-black dark:bg-white shadow-lg z-10 transition-all duration-400 ease-in-out"
+            className="absolute top-[-18px] w-[52px] h-[52px] rounded-full flex items-center justify-center bg-black dark:bg-white shadow-lg z-10 transition-all duration-400 ease-gooey"
             style={{
               insetInlineStart: `calc(${bubbleLeft}% - 26px)`,
             }}

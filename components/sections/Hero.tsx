@@ -76,7 +76,7 @@ export default function Hero() {
       }
 
       // Animate images with parallax-like effect
-      const imageContainers = imagesRef.current?.querySelectorAll('div') || [];
+      const imageContainers = imagesRef.current?.querySelectorAll('.relative') || [];
       imageContainers.forEach((img, index) => {
         tl.from(img, {
           opacity: 0,
@@ -91,9 +91,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="py-16 md:py-24 overflow-hidden">
+    <section ref={heroRef} className="pt-20 pb-4 md:pt-24 md:pb-6 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:pl-0 lg:pr-8 xl:pl-0">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center lg:ml-5">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:ml-5">
           <div ref={contentRef} className="space-y-6">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
               {t('acronymTitle').split('|').map((line, index) => {
@@ -176,9 +176,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div ref={imagesRef} className="hidden lg:grid grid-cols-2 gap-3">
+          <div ref={imagesRef} className="hidden lg:grid grid-cols-2 gap-3 max-w-[85%] ml-auto">
             <div className="space-y-3">
-              <div className="relative aspect-[2/5] rounded-lg overflow-hidden border-2" style={{ borderColor: '#00353f' }}>
+              <div className="relative rounded-lg overflow-hidden border-2 w-full" style={{ aspectRatio: '2/3', borderColor: '#00353f' }}>
                 <Image
                   src="/images/4e140827-456d-4ff7-9e0d-7981e1b0f875.avif"
                   alt="Employee interacting with software"
@@ -190,7 +190,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="space-y-3">
-              <div className="relative aspect-[2/3] rounded-lg overflow-hidden border-2" style={{ borderColor: '#00353f' }}>
+              <div className="relative rounded-lg overflow-hidden border-2 w-full" style={{ aspectRatio: '4/3', borderColor: '#00353f' }}>
                 <Image
                   src="/images/23c333ef-fb7f-4a47-acbc-a50b49fb3fd8.avif"
                   alt="Professional office space"
@@ -200,7 +200,7 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="relative aspect-[2/2] rounded-lg overflow-hidden border-2" style={{ borderColor: '#00353f' }}>
+              <div className="relative rounded-lg overflow-hidden border-2 w-full" style={{ aspectRatio: '4/3', borderColor: '#00353f' }}>
                 <Image
                   src="/images/de1af6e6-8353-41e6-a3dc-a830586eb82d.avif"
                   alt="AI innovations"

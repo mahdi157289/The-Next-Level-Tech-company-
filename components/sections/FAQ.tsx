@@ -15,46 +15,7 @@ export default function FAQ() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Animate header
-      const header = sectionRef.current?.querySelector('.text-center');
-      if (header) {
-        gsap.from(header.children || [], {
-          opacity: 0,
-          y: 30,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        });
-      }
-
-      // Animate accordion items
-      const items = sectionRef.current?.querySelectorAll('[data-accordion-item]') || [];
-      gsap.from(items, {
-        opacity: 0,
-        x: -40,
-        duration: 0.7,
-        stagger: {
-          amount: 0.4,
-          from: 'start',
-        },
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-          toggleActions: 'play none none none',
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
+    // GSAP animations removed to fix opacity 0 bug
   }, []);
 
   const questions = [

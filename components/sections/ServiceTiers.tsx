@@ -110,7 +110,7 @@ export default function ServiceTiers() {
         cards.forEach((card) => {
           ScrollTrigger.create({
             trigger: card,
-            start: 'top 100px', // Adjusted for cleaner head-on positioning
+            start: 'top 45%', // Pins safely below the title
             end: 'bottom top', 
             pin: true,
             pinSpacing: false, // Prevents the "gap" and allows stacking
@@ -120,8 +120,9 @@ export default function ServiceTiers() {
             animation: gsap.timeline()
               .to(card, { 
                 scale: 0.9, 
-                opacity: 0.5,
-                filter: 'blur(8px) brightness(0.7)', // Premium depth effect
+                opacity: 1, // Keep solid
+                y: -40, // Move up slightly to stack
+                filter: 'brightness(0.5)', // Smooth depth shadow
                 transformOrigin: 'top center',
                 duration: 1, 
                 ease: 'none' 
@@ -148,7 +149,7 @@ export default function ServiceTiers() {
   return (
     <section id="solutions" className="py-12 md:py-24 bg-gray-50 dark:bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-20">
+        <div className="text-center mb-10 md:mb-20 md:sticky md:top-[8vh] md:z-10">
           <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight uppercase">
             <span className="block text-xs md:text-sm font-mono text-teal-500 tracking-[0.5em] mb-3">
               {t('eyebrow')}
@@ -252,7 +253,7 @@ export default function ServiceTiers() {
           </div>
         </div>
 
-        {/* ── DESKTOP: original sticky stack ── */}
+        {/* ── DESKTOP: Clean Deck Stack ── */}
         <div ref={containerRef} className="hidden md:block max-w-5xl mx-auto px-4 relative">
           {tiers.map((tier, index) => (
             <div
@@ -260,7 +261,7 @@ export default function ServiceTiers() {
               data-sticky-card
               className="bg-[#00353F]/90 backdrop-blur-2xl rounded-[2rem] shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.5)] border border-white/10 transform-gpu will-change-transform mb-20 md:mb-32"
               style={{
-                transformOrigin: 'center center',
+                transformOrigin: 'top center',
                 zIndex: index + 1,
                 backfaceVisibility: 'hidden',
               }}

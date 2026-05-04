@@ -13,47 +13,7 @@ export default function ContentSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const items = sectionRef.current?.querySelectorAll('.content-item') || [];
-      
-      // Animate title first
-      const title = sectionRef.current?.querySelector('h2');
-      if (title) {
-        gsap.from(title, {
-          opacity: 0,
-          y: 30,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        });
-      }
-
-      // Animate content items with stagger
-      gsap.from(items, {
-        opacity: 0,
-        y: 50,
-        scale: 0.96,
-        duration: 0.8,
-        stagger: {
-          amount: 0.5,
-          from: 'start',
-        },
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-          toggleActions: 'play none none none',
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
+    // GSAP animations removed to fix opacity 0 bug
   }, []);
 
   const featuredPost = {

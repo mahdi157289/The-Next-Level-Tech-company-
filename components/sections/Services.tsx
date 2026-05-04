@@ -6,24 +6,9 @@ import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import {
-  Globe, 
-  Smartphone, 
-  Database, 
-  Bot, 
-  Megaphone, 
-  BarChart, 
-  CircleDot, 
-  Settings, 
-  Rocket, 
-  Phone,
-  MessageSquare,
-  ArrowLeftRight,
-  Zap,
-  Cpu,
-  CheckCircle,
-  Users,
-  ChevronLeft,
-  ChevronRight,
+  Globe, Users, CheckCircle, BarChart, Database,
+  Bot, Megaphone, ArrowLeftRight, Zap, Cpu,
+  ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 
@@ -49,11 +34,11 @@ function renderIcon(name: string, cls: string) {
     case 'Users':       return <Users        className={cls} />;
     case 'CheckCircle': return <CheckCircle  className={cls} />;
     case 'BarChart':    return <BarChart     className={cls} />;
+    case 'Database':    return <Database     className={cls} />;
     case 'Bot':         return <Bot          className={cls} />;
     case 'Megaphone':   return <Megaphone    className={cls} />;
     case 'Zap':         return <Zap          className={cls} />;
     case 'Cpu':         return <Cpu          className={cls} />;
-    case 'Database':    return <Database     className={cls} />;
     default:            return null;
   }
 }
@@ -239,8 +224,8 @@ function DesktopPair({
         style={{
           top: '50%',
           left: isRtl 
-            ? (expandedSide === 'left' ? '33.33%' : expandedSide === 'right' ? '66.67%' : '50%')
-            : (expandedSide === 'left' ? '66.67%' : expandedSide === 'right' ? '33.33%' : '50%'),
+            ? (expandedSide === 'left' ? '33.333%' : expandedSide === 'right' ? '66.666%' : '50%')
+            : (expandedSide === 'left' ? '66.666%' : expandedSide === 'right' ? '33.333%' : '50%'),
           transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           opacity: expandedSide ? 1 : 0,
           pointerEvents: expandedSide ? 'auto' : 'none'
@@ -392,17 +377,6 @@ export default function Services() {
   useEffect(() => {
     if (!sectionRef.current) return;
     const ctx = gsap.context(() => {
-      gsap.from(sectionRef.current?.querySelector('h2') || null, {
-        opacity: 0, y: 30, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none none' },
-      });
-      const cards = sectionRef.current?.querySelectorAll('.service-card') || [];
-      gsap.from(cards, {
-        opacity: 0, y: 60, scale: 0.95, duration: 0.9,
-        stagger: { amount: 0.6, from: 'start' },
-        ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', toggleActions: 'play none none none' },
-      });
     }, sectionRef);
     return () => ctx.revert();
   }, []);

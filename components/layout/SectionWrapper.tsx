@@ -45,7 +45,7 @@ export default function SectionWrapper({ children, className = '', id, animate =
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [animate]);
 
   return (
     <div ref={sectionRef} id={id} className={`section-wrapper ${className}`}>

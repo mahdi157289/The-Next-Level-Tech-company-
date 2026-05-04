@@ -35,61 +35,7 @@ export default function Contact() {
   };
 
   useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Animate header
-      const header = sectionRef.current?.querySelector('.text-center');
-      if (header) {
-        gsap.from(header.children || [], {
-          opacity: 0,
-          y: 30,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        });
-      }
-
-      // Animate contact info items
-      const contactItems = sectionRef.current?.querySelectorAll('.contact-item') || [];
-      gsap.from(contactItems, {
-        opacity: 0,
-        y: 40,
-        scale: 0.95,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-          toggleActions: 'play none none none',
-        },
-      });
-
-      // Animate form
-      const form = sectionRef.current?.querySelector('form');
-      if (form) {
-        gsap.from(form.children || [], {
-          opacity: 0,
-          y: 30,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: form,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-        });
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
+    // GSAP animations removed to fix opacity 0 bug
   }, []);
 
   return (

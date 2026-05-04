@@ -72,11 +72,16 @@ const config = {
             "transform": "translateX(100%)",
           },
         },
+        "marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - 2rem))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "shimmer": "shimmer 2s infinite",
+        "marquee": "marquee 30s linear infinite",
       },
     },
   },
