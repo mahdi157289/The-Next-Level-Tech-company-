@@ -41,10 +41,13 @@ export default function Home() {
         </SectionWrapper>
         <SectionWrapper id="services">
           <Services />
-          <ServiceTiers />
         </SectionWrapper>
+        {/* ServiceTiers manages its own GSAP pin — no SectionWrapper */}
+        <ServiceTiers />
         <SectionWrapper id="content">
           <ContentSection />
+        </SectionWrapper>
+        <SectionWrapper id="faq">
           <FAQ />
         </SectionWrapper>
         <SectionWrapper id="contact">

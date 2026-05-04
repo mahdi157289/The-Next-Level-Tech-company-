@@ -29,17 +29,13 @@ export default function SectionWrapper({ children, className = '', id, animate =
           gsap.to(sectionRef.current, { opacity: 1, filter: 'blur(0px)', duration: 0.8, ease: 'power3.out' });
         },
         onLeave: () => {
-          if (nextSection && ScrollTrigger.isInViewport(nextSection)) {
-            gsap.to(sectionRef.current, { opacity: 0, filter: 'blur(5px)', duration: 0.6, ease: 'power3.in' });
-          }
+          // Keep visible to avoid "blanks" during transition
         },
         onEnterBack: () => {
           gsap.to(sectionRef.current, { opacity: 1, filter: 'blur(0px)', duration: 0.8, ease: 'power3.out' });
         },
         onLeaveBack: () => {
-          if (prevSection && ScrollTrigger.isInViewport(prevSection)) {
-            gsap.to(sectionRef.current, { opacity: 0, filter: 'blur(5px)', duration: 0.6, ease: 'power3.in' });
-          }
+          // Keep visible to avoid "blanks" during transition
         },
       });
     }, sectionRef);

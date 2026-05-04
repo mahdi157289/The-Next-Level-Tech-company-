@@ -3,16 +3,23 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
 import { Link } from '../../i18n/routing';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { gsap, ScrollTrigger } from '../../lib/gsap';
+import { gsap } from '../../lib/gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function ServiceTiers() {
   const t = useTranslations('serviceTiers');
   const tServices = useTranslations('services');
-  const containerRef = useRef<HTMLDivElement>(null);
+
+  // ── refs ────────────────────────────────────────────
+  const sectionRef = useRef<HTMLElement>(null);   // outer section — gets pinned
+  const deckRef    = useRef<HTMLDivElement>(null); // single "card slot"
   const mobileTrackRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -24,7 +31,6 @@ export default function ServiceTiers() {
       cta: t('static.cta'),
       image: '/images/83d05d4a-01ac-4167-a5e4-d3dadde6e9df.avif',
       imageAlt: t('static.imageAlt'),
-      aspectRatio: 'aspect-[3/2]',
     },
     {
       eyebrow: t('standard.eyebrow'),
@@ -33,7 +39,6 @@ export default function ServiceTiers() {
       cta: t('standard.cta'),
       image: '/images/2c022d7e-81fe-4a9b-8ad3-ce3f7e0f359b.avif',
       imageAlt: t('standard.imageAlt'),
-      aspectRatio: 'aspect-[3/2]',
     },
     {
       eyebrow: t('advanced.eyebrow'),
@@ -42,7 +47,6 @@ export default function ServiceTiers() {
       cta: t('advanced.cta'),
       image: '/images/57c3338e-f342-4ee9-b661-422e8418189d.avif',
       imageAlt: t('advanced.imageAlt'),
-      aspectRatio: 'aspect-[3/2]',
     },
     {
       eyebrow: t('aiMarketing.eyebrow'),
@@ -51,7 +55,6 @@ export default function ServiceTiers() {
       cta: t('aiMarketing.cta'),
       image: '/images/23c333ef-fb7f-4a47-acbc-a50b49fb3fd8.avif',
       imageAlt: t('aiMarketing.imageAlt'),
-      aspectRatio: 'aspect-[3/2]',
     },
     {
       eyebrow: t('humanMarketing.eyebrow'),
@@ -60,7 +63,6 @@ export default function ServiceTiers() {
       cta: t('humanMarketing.cta'),
       image: '/images/8c377ce8-99cc-44ef-9617-c0d570c3a9b4.avif',
       imageAlt: t('humanMarketing.imageAlt'),
-      aspectRatio: 'aspect-[3/2]',
     },
     {
       eyebrow: t('simpleAutomation.eyebrow'),
@@ -70,7 +72,6 @@ export default function ServiceTiers() {
       image: '/images/simple-automation-v2.avif',
       imageAlt: t('simpleAutomation.imageAlt'),
       objectPosition: 'object-left',
-      aspectRatio: 'aspect-[156/74]',
     },
     {
       eyebrow: t('aiAgentAutomation.eyebrow'),
@@ -80,13 +81,12 @@ export default function ServiceTiers() {
       image: '/images/ai-agent-automation.avif',
       imageAlt: t('aiAgentAutomation.imageAlt'),
       objectPosition: 'object-left',
-      aspectRatio: 'aspect-video',
     },
   ];
 
   const TOTAL = tiers.length;
 
-  /* ── mobile navigation helpers ── */
+  /* ── mobile helpers ── */
   const scrollToIdx = (idx: number) => {
     const track = mobileTrackRef.current;
     if (!track) return;
@@ -95,78 +95,91 @@ export default function ServiceTiers() {
     setActiveIdx(idx);
   };
 
-  /* ── GSAP sticky stack — desktop only ── */
+  /* ── DESKTOP scroll-driven deck ── */
   useEffect(() => {
-    if (!containerRef.current) return;
+    const section = sectionRef.current;
+    const deck    = deckRef.current;
+    if (!section || !deck) return;
 
-    // Only run on desktop — matchMedia prevents mobile execution
     const mm = gsap.matchMedia();
+
     mm.add('(min-width: 768px)', () => {
-      // Double-check element is visible before pinning
-      if (!containerRef.current || getComputedStyle(containerRef.current).display === 'none') return;
+      const cards = Array.from(deck.querySelectorAll<HTMLElement>('[data-card]'));
+      if (!cards.length) return;
 
-      const ctx = gsap.context(() => {
-        const cards = containerRef.current?.querySelectorAll('[data-sticky-card]') || [];
-        cards.forEach((card) => {
-          ScrollTrigger.create({
-            trigger: card,
-            start: 'top 45%', // Pins safely below the title
-            end: 'bottom top', 
-            pin: true,
-            pinSpacing: false, // Prevents the "gap" and allows stacking
-            scrub: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            animation: gsap.timeline()
-              .to(card, { 
-                scale: 0.9, 
-                opacity: 1, // Keep solid
-                y: -40, // Move up slightly to stack
-                filter: 'brightness(0.5)', // Smooth depth shadow
-                transformOrigin: 'top center',
-                duration: 1, 
-                ease: 'none' 
-              }),
-          });
+      // Set all cards to absolute stack — first one fully visible, rest hidden below
+      gsap.set(cards, { position: 'absolute', inset: 0, opacity: 0, scale: 1, filter: 'blur(0px)' });
+      gsap.set(cards[0], { opacity: 1 }); // show first card immediately
+
+      // Build the master timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',              // pin starts when section hits top of viewport
+          end: () => `+=${TOTAL * 700}`, // 700px of scroll per card
+          pin: true,                     // section is pinned — title stays fixed
+          scrub: 0.8,                    // smooth scrub
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
+
+      for (let i = 0; i < TOTAL - 1; i++) {
+        const current = cards[i];
+        const next    = cards[i + 1];
+
+        // Step 1 — blur current card out FAST (0.3 of a timeline unit)
+        tl.to(current, {
+          opacity: 0,
+          scale: 0.88,
+          filter: 'blur(14px) brightness(0.25)',
+          duration: 0.3,
+          ease: 'power2.in',
         });
 
-        // Add a "spacer" scroll trigger to the container to ensure scroll room
-        ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom bottom',
-          onRefresh: (self) => {
-             // ensure container has height for children
-          }
-        });
-      }, containerRef);
-      return () => ctx.revert();
+        // Step 2 — fade next card in smoothly from slightly below (0.5 units, overlaps step 1)
+        tl.fromTo(
+          next,
+          { opacity: 0, y: 60, scale: 0.96, filter: 'blur(6px)' },
+          { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power3.out' },
+          '<0.15', // start 0.15 into the blur-out, so transitions overlap slightly
+        );
+
+        // Step 3 — brief pause on new card so user can read it
+        tl.to({}, { duration: 0.4 });
+      }
     });
 
     return () => mm.revert();
-  }, []);
+  }, [TOTAL]);
 
   return (
-    <section id="solutions" className="py-12 md:py-24 bg-gray-50 dark:bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-20 md:sticky md:top-[8vh] md:z-10">
-          <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight uppercase">
-            <span className="block text-xs md:text-sm font-mono text-teal-500 tracking-[0.5em] mb-3">
-              {t('eyebrow')}
-            </span>
+    <section
+      ref={sectionRef}
+      id="solutions"
+      className="bg-gray-50 dark:bg-[#020817] overflow-hidden"
+      style={{ height: '100vh' }} // exact viewport height — GSAP adds scroll room via pin
+    >
+      <div className="h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* ── TITLE — always stays at top because section is pinned ── */}
+        <div className="text-center pt-20 pb-10 shrink-0">
+          <span className="block text-xs md:text-sm font-mono text-teal-500 tracking-[0.5em] mb-3 uppercase">
+            {t('eyebrow')}
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight uppercase">
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-black dark:from-white to-gray-600 dark:to-white/60">
               {t('title')}
             </span>
           </h2>
-          <div className="h-1 w-20 bg-teal-500 mx-auto rounded-full shadow-[0_0_15px_rgba(20,184,166,0.8)]" />
+          <div className="h-1 w-20 bg-teal-500 mx-auto rounded-full mt-4 shadow-[0_0_15px_rgba(20,184,166,0.8)]" />
         </div>
 
         {/* ── MOBILE: horizontal swipe carousel ── */}
-        <div className="md:hidden">
-          {/* swipe track */}
+        <div className="md:hidden flex-1 flex flex-col overflow-hidden">
           <div
             ref={mobileTrackRef}
-            className="flex flex-row flex-nowrap gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex flex-row flex-nowrap gap-4 overflow-x-auto snap-x snap-mandatory pb-4 flex-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             onScroll={(e) => {
               const el = e.currentTarget;
               const cardW = el.scrollWidth / TOTAL;
@@ -177,10 +190,9 @@ export default function ServiceTiers() {
             {tiers.map((tier, i) => (
               <div
                 key={i}
-                className="snap-center shrink-0 w-[85vw] max-w-[340px] bg-[#00353F]/90 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl overflow-hidden flex flex-col"
+                className="snap-center shrink-0 w-[85vw] max-w-[340px] bg-[#00353F] rounded-2xl border border-white/10 shadow-xl overflow-hidden flex flex-col"
               >
-                {/* image */}
-                <div className={`relative w-full ${tier.aspectRatio || 'aspect-video'} overflow-hidden`}>
+                <div className="relative w-full aspect-video overflow-hidden">
                   <Image
                     src={tier.image}
                     alt={tier.imageAlt}
@@ -190,25 +202,15 @@ export default function ServiceTiers() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#00353F]/80 to-transparent" />
                 </div>
-                {/* text */}
                 <div className="p-5 flex flex-col gap-3 flex-1">
                   <p className="text-xs uppercase tracking-wider text-white/60">{tier.eyebrow}</p>
                   <h3 className="text-lg font-bold text-white leading-snug">{tier.title}</h3>
                   <p className="text-sm text-white/75 leading-relaxed line-clamp-3">{tier.description}</p>
                   <div className="flex gap-2 mt-auto pt-2">
-                    <Button
-                      size="sm"
-                      asChild
-                      className="flex-1 bg-white text-[#00353F] hover:bg-white/90 text-xs font-semibold"
-                    >
+                    <Button size="sm" asChild className="flex-1 bg-white text-[#00353F] hover:bg-white/90 text-xs font-semibold">
                       <Link href="#contact">{tier.cta}</Link>
                     </Button>
-                    <Button
-                      size="sm"
-                      asChild
-                      variant="outline"
-                      className="flex-1 bg-white/10 text-white hover:bg-white/20 border-white/20 text-xs"
-                    >
+                    <Button size="sm" asChild variant="outline" className="flex-1 bg-white/10 text-white hover:bg-white/20 border-white/20 text-xs">
                       <Link href="#contact">{tServices('getQuote')}</Link>
                     </Button>
                   </div>
@@ -223,16 +225,14 @@ export default function ServiceTiers() {
               <button
                 key={i}
                 onClick={() => scrollToIdx(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === activeIdx ? 'w-5 h-2 bg-[#00353F]' : 'w-2 h-2 bg-[#00353F]/30'
-                }`}
+                className={`rounded-full transition-all duration-300 ${i === activeIdx ? 'w-5 h-2 bg-[#00353F]' : 'w-2 h-2 bg-[#00353F]/30'}`}
                 aria-label={`Go to tier ${i + 1}`}
               />
             ))}
           </div>
 
           {/* prev / next */}
-          <div className="flex justify-between items-center mt-4 px-1">
+          <div className="flex justify-between items-center mt-3 px-1 pb-4">
             <button
               onClick={() => scrollToIdx(Math.max(0, activeIdx - 1))}
               disabled={activeIdx === 0}
@@ -240,9 +240,7 @@ export default function ServiceTiers() {
             >
               <ChevronLeft className="h-5 w-5 text-gray-700 dark:text-white" />
             </button>
-            <span className="text-sm text-gray-500 dark:text-white/50">
-              {activeIdx + 1} / {TOTAL}
-            </span>
+            <span className="text-sm text-gray-500 dark:text-white/50">{activeIdx + 1} / {TOTAL}</span>
             <button
               onClick={() => scrollToIdx(Math.min(TOTAL - 1, activeIdx + 1))}
               disabled={activeIdx === TOTAL - 1}
@@ -253,59 +251,66 @@ export default function ServiceTiers() {
           </div>
         </div>
 
-        {/* ── DESKTOP: Clean Deck Stack ── */}
-        <div ref={containerRef} className="hidden md:block max-w-5xl mx-auto px-4 relative">
+        {/* ── DESKTOP: single card slot — GSAP swaps cards here ── */}
+        <div
+          ref={deckRef}
+          className="hidden md:block relative flex-1 max-w-4xl mx-auto w-full mb-16"
+          style={{ minHeight: '420px' }}
+        >
           {tiers.map((tier, index) => (
             <div
               key={index}
-              data-sticky-card
-              className="bg-[#00353F]/90 backdrop-blur-2xl rounded-[2rem] shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.5)] border border-white/10 transform-gpu will-change-transform mb-20 md:mb-32"
-              style={{
-                transformOrigin: 'top center',
-                zIndex: index + 1,
-                backfaceVisibility: 'hidden',
-              }}
+              data-card
+              className="rounded-[2rem] overflow-hidden bg-[#00353F] border border-white/10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.6)] transform-gpu will-change-transform"
             >
-              <Card className="border-0 shadow-none bg-transparent">
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className={`relative ${tier.aspectRatio || 'aspect-video'} rounded-lg overflow-hidden`}>
-                      <Image
-                        src={tier.image}
-                        alt={tier.imageAlt}
-                        fill
-                        className={`object-cover ${tier.objectPosition || 'object-center'}`}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                    <div className="space-y-4">
-                      <p className="text-sm uppercase tracking-wider text-white/70">{tier.eyebrow}</p>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">{tier.title}</h3>
-                      <p className="text-lg text-white/80">{tier.description}</p>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <Button
-                          size="lg"
-                          asChild
-                          className="flex-1 bg-[#00353F] text-white hover:bg-[#00353F]/90 dark:bg-white dark:text-[#00353F] dark:hover:bg-white/90 border border-white/10 shadow-lg"
-                        >
-                          <Link href="#contact">{tier.cta}</Link>
-                        </Button>
-                        <Button
-                          size="lg"
-                          asChild
-                          variant="outline"
-                          className="flex-1 bg-white/10 text-white hover:bg-white/20 border-white/20 shadow-lg"
-                        >
-                          <Link href="#contact">{tServices('getQuote')}</Link>
-                        </Button>
-                      </div>
-                    </div>
+              <div className="grid grid-cols-2 h-full min-h-[380px]">
+                {/* Image side — fills 100% height, no aspect-ratio wrapper */}
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={tier.image}
+                    alt={tier.imageAlt}
+                    fill
+                    className={`object-cover ${tier.objectPosition || 'object-center'}`}
+                    sizes="50vw"
+                    priority={index === 0}
+                  />
+                  {/* subtle right-edge fade into the dark card bg */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#00353F]/60" />
+                </div>
+
+                {/* Text side */}
+                <div className="flex flex-col justify-center gap-5 p-8 lg:p-10">
+                  <p className="text-xs uppercase tracking-[0.3em] text-teal-400 font-mono">
+                    {tier.eyebrow}
+                  </p>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white leading-snug">
+                    {tier.title}
+                  </h3>
+                  <p className="text-base text-white/70 leading-relaxed">
+                    {tier.description}
+                  </p>
+                  <div className="flex gap-3 pt-2">
+                    <Button
+                      size="lg"
+                      asChild
+                      className="flex-1 bg-white text-[#00353F] hover:bg-teal-50 font-bold text-sm"
+                    >
+                      <Link href="#contact">{tier.cta}</Link>
+                    </Button>
+                    <Button
+                      size="lg"
+                      asChild
+                      className="flex-1 bg-transparent text-white border border-white/30 hover:bg-white/10 text-sm"
+                    >
+                      <Link href="#contact">{tServices('getQuote')}</Link>
+                    </Button>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
