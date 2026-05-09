@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Button } from '../ui/button';
+import { Link } from '../../i18n/routing';
 import {
   Globe, Users, CheckCircle, BarChart, Database,
   Bot, Megaphone, ArrowLeftRight, Zap, Cpu,
@@ -20,6 +21,7 @@ interface ServiceItem {
   image: string;
   imageAlt: string;
   highlights?: string[];
+  href: string;
 }
 
 interface ServiceGroup {
@@ -76,17 +78,18 @@ function MobileCard({ item, t }: { item: ServiceItem; t: ReturnType<typeof useTr
         <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">{item.description}</p>
         
         <div className="flex gap-3 mt-auto pt-2">
-          <Button size="sm" variant="ghost" className="flex-1 border border-white/10 text-white/70 hover:bg-white/5 text-[10px] uppercase tracking-widest h-10">
-            {t('viewDetails')}
+          <Button size="sm" variant="ghost" className="flex-1 border border-white/10 text-white/70 hover:bg-white/5 text-[10px] uppercase tracking-widest h-10" asChild>
+            <Link href={item.href}>{t('viewDetails')}</Link>
           </Button>
-          <Button size="sm" className="flex-1 bg-white text-[#00353F] font-bold text-[10px] uppercase tracking-widest h-10">
-            {t('getQuote')}
+          <Button size="sm" className="flex-1 bg-white text-[#00353F] font-bold text-[10px] uppercase tracking-widest h-10" asChild>
+            <Link href="#contact">{t('getQuote')}</Link>
           </Button>
         </div>
       </div>
     </div>
   );
 }
+
 
 /* ─── desktop card pair ──────────────────────────────────────────────────── */
 function DesktopPair({
@@ -160,11 +163,11 @@ function DesktopPair({
           )}
           
           <div className="flex gap-4 mt-auto">
-            <Button variant="ghost" className="flex-1 border border-white/10 hover:bg-white/5 text-white/70 hover:text-white transition-all uppercase tracking-widest text-[10px] h-12">
-              {t('viewDetails')}
+            <Button variant="ghost" className="flex-1 border border-white/10 hover:bg-white/5 text-white/70 hover:text-white transition-all uppercase tracking-widest text-[10px] h-12" asChild>
+              <Link href={items[0].href}>{t('viewDetails')}</Link>
             </Button>
-            <Button className="flex-1 bg-white text-[#00353F] hover:bg-teal-50 transition-all uppercase tracking-widest text-[10px] h-12 font-bold">
-              {t('getQuote')}
+            <Button className="flex-1 bg-white text-[#00353F] hover:bg-teal-50 transition-all uppercase tracking-widest text-[10px] h-12 font-bold" asChild>
+              <Link href="#contact">{t('getQuote')}</Link>
             </Button>
           </div>
         </CardContent>
@@ -208,15 +211,16 @@ function DesktopPair({
             </ul>
           )}
           <div className="flex gap-4 mt-auto">
-            <Button variant="ghost" className="flex-1 border border-white/10 hover:bg-white/5 text-white/70 hover:text-white transition-all uppercase tracking-widest text-[10px] h-12">
-              {t('viewDetails')}
+            <Button variant="ghost" className="flex-1 border border-white/10 hover:bg-white/5 text-white/70 hover:text-white transition-all uppercase tracking-widest text-[10px] h-12" asChild>
+              <Link href={items[1].href}>{t('viewDetails')}</Link>
             </Button>
-            <Button className="flex-1 bg-white text-[#00353F] hover:bg-teal-50 transition-all uppercase tracking-widest text-[10px] h-12 font-bold">
-              {t('getQuote')}
+            <Button className="flex-1 bg-white text-[#00353F] hover:bg-teal-50 transition-all uppercase tracking-widest text-[10px] h-12 font-bold" asChild>
+              <Link href="#contact">{t('getQuote')}</Link>
             </Button>
           </div>
         </CardContent>
       </Card>
+
 
       {/* SWAP BUTTON */}
       <div
@@ -290,7 +294,8 @@ export default function Services() {
           description: t('websiteCreation.description'), 
           image: '/images/f46a60f7-a9a2-49b7-954e-34c806953ad7.avif', 
           imageAlt: t('websiteCreation.imageAlt'),
-          highlights: [t('websiteCreation.highlight1'), t('websiteCreation.highlight2'), t('websiteCreation.highlight3'), t('websiteCreation.highlight4')]
+          highlights: [t('websiteCreation.highlight1'), t('websiteCreation.highlight2'), t('websiteCreation.highlight3'), t('websiteCreation.highlight4')],
+          href: '/services/presence'
         },
         { 
           icon: 'Users', 
@@ -298,7 +303,8 @@ export default function Services() {
           description: t('appDevelopment.description'), 
           image: '/images/7d7550b9-9b1a-4e90-9bb5-0cb57ea28d28.avif', 
           imageAlt: t('appDevelopment.imageAlt'), 
-          highlights: [t('appDevelopment.highlight1'), t('appDevelopment.highlight2'), t('appDevelopment.highlight3'), t('appDevelopment.highlight4')] 
+          highlights: [t('appDevelopment.highlight1'), t('appDevelopment.highlight2'), t('appDevelopment.highlight3'), t('appDevelopment.highlight4')],
+          href: '/services/app-development'
         },
       ],
     },
@@ -311,7 +317,8 @@ export default function Services() {
           description: t('dataOrganization.description'), 
           image: '/images/035762ab-b59c-48b6-b5d1-1dd2db2262b3.avif', 
           imageAlt: t('dataOrganization.imageAlt'),
-          highlights: [t('dataOrganization.highlight1'), t('dataOrganization.highlight2'), t('dataOrganization.highlight3'), t('dataOrganization.highlight4')]
+          highlights: [t('dataOrganization.highlight1'), t('dataOrganization.highlight2'), t('dataOrganization.highlight3'), t('dataOrganization.highlight4')],
+          href: '/services/data-organization'
         },
         { 
           icon: 'BarChart', 
@@ -319,7 +326,8 @@ export default function Services() {
           description: t('analyticsSolutions.description'), 
           image: '/images/bf90027e-1724-4b82-b430-963d19430087.avif', 
           imageAlt: t('analyticsSolutions.imageAlt'),
-          highlights: [t('analyticsSolutions.highlight1'), t('analyticsSolutions.highlight2'), t('analyticsSolutions.highlight3'), t('analyticsSolutions.highlight4')]
+          highlights: [t('analyticsSolutions.highlight1'), t('analyticsSolutions.highlight2'), t('analyticsSolutions.highlight3'), t('analyticsSolutions.highlight4')],
+          href: '/services/analytics'
         },
       ],
     },
@@ -332,7 +340,8 @@ export default function Services() {
           description: t('marketingHuman.description'), 
           image: '/images/8c377ce8-99cc-44ef-9617-c0d570c3a9b4.avif', 
           imageAlt: t('marketingHuman.imageAlt'),
-          highlights: [t('marketingHuman.highlight1'), t('marketingHuman.highlight2'), t('marketingHuman.highlight3'), t('marketingHuman.highlight4')]
+          highlights: [t('marketingHuman.highlight1'), t('marketingHuman.highlight2'), t('marketingHuman.highlight3'), t('marketingHuman.highlight4')],
+          href: '/services/human-marketing'
         },
         { 
           icon: 'Bot', 
@@ -340,7 +349,8 @@ export default function Services() {
           description: t('marketingAI.description'), 
           image: '/images/23c333ef-fb7f-4a47-acbc-a50b49fb3fd8.avif', 
           imageAlt: t('marketingAI.imageAlt'),
-          highlights: [t('marketingAI.highlight1'), t('marketingAI.highlight2'), t('marketingAI.highlight3'), t('marketingAI.highlight4')]
+          highlights: [t('marketingAI.highlight1'), t('marketingAI.highlight2'), t('marketingAI.highlight3'), t('marketingAI.highlight4')],
+          href: '/services/ai-marketing'
         },
       ],
     },
@@ -353,7 +363,8 @@ export default function Services() {
           description: t('aiAgentAutomation.description'), 
           image: '/images/ai-agent-v3.png', 
           imageAlt: t('aiAgentAutomation.imageAlt'),
-          highlights: [t('aiAgentAutomation.highlight1'), t('aiAgentAutomation.highlight2'), t('aiAgentAutomation.highlight3'), t('aiAgentAutomation.highlight4')]
+          highlights: [t('aiAgentAutomation.highlight1'), t('aiAgentAutomation.highlight2'), t('aiAgentAutomation.highlight3'), t('aiAgentAutomation.highlight4')],
+          href: '/services/ai-automation'
         },
         { 
           icon: 'Cpu', 
@@ -361,7 +372,8 @@ export default function Services() {
           description: t('simpleAutomation.description'), 
           image: '/images/simple-automation-v2.avif', 
           imageAlt: t('simpleAutomation.imageAlt'),
-          highlights: [t('simpleAutomation.highlight1'), t('simpleAutomation.highlight2'), t('simpleAutomation.highlight3'), t('simpleAutomation.highlight4')]
+          highlights: [t('simpleAutomation.highlight1'), t('simpleAutomation.highlight2'), t('simpleAutomation.highlight3'), t('simpleAutomation.highlight4')],
+          href: '/services/simple-automation'
         },
       ],
     },

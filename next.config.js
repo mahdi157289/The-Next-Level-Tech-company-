@@ -2,6 +2,7 @@ const withNextIntl = require('next-intl/plugin')('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['@tsparticles/react', '@tsparticles/engine', '@tsparticles/slim'],
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],

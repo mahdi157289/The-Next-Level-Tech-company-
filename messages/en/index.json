@@ -16,7 +16,7 @@
     "title": "Reimagine your business, Innovate boldly, Scale higher, Empower success",
     "acronymTitle": "Reimagine your business|Innovate boldly|Scale higher|Empower success",
     "tagline": "Rise to the next level . . .",
-    "description": "Step into a world where your ideas become reality. From sleek websites to powerful apps and smart data solutions, we offer flexible options for every vision. Let's build, innovate, and grow together—your next level starts here.",
+    "description": "We build websites, apps, and digital ecosystems that put your brand ahead — powered by AI, automation, and world-class design. Choose your tier, define your ambition, and let's grow together.",
     "ctaPrimary": "Start now",
     "ctaSecondary": "Explore"
   },
@@ -114,56 +114,926 @@
     "getQuote": "Get a Quote"
   },
   "serviceTiers": {
-    "eyebrow": "Our Solutions To",
-    "title": "Elevate your digital experience",
+    "eyebrow": "Our Web Creation Tiers",
+    "title": "Choose your level of impact",
     "static": {
-      "eyebrow": "Static option",
-      "title": "Launch with a simple site",
-      "description": "Start strong with a sleek, reliable website. No fuss—just a solid foundation for your online presence.",
-      "cta": "Start now",
-      "imageAlt": "image of confident professional"
+      "eyebrow": "Tier 01 · Presence",
+      "title": "Your brand. Online. Instantly.",
+      "description": "You have a vision — let the world see it. A clean, fast, beautifully designed website that puts your name on the map. Zero complexity, maximum credibility from day one.",
+      "cta": "Claim your space",
+      "badge": "Fast Launch",
+      "upgrade": "Start here — upgrade anytime, no data loss",
+      "imageAlt": "professional website presence for a new brand",
+      "feature1": "Live in days, not months",
+      "feature2": "Custom design — your colors, fonts, logo",
+      "feature3": "Mobile-first & SEO-ready from day one",
+      "feature4": "Up to 5 pages: Home, About, Services, Contact"
     },
     "standard": {
-      "eyebrow": "Standard option",
-      "title": "Expand with smart features",
-      "description": "Add interactive tools and integrations as you grow. Ideal for teams ready to take the next step.",
-      "cta": "Explore",
-      "imageAlt": "image of a digital marketing strategy board"
+      "eyebrow": "Tier 02 · Identity",
+      "title": "A site that thinks, moves, and sells",
+      "description": "Your website should work for you while you sleep. Booking systems, live content, CRM integrations — all tuned to your brand's rhythm. Built to convert visitors into clients.",
+      "cta": "Build my identity",
+      "badge": "Recommended",
+      "upgrade": "Includes everything in Presence, plus smart features",
+      "imageAlt": "dynamic brand identity website with interactive features",
+      "feature1": "Custom animations & micro-interactions",
+      "feature2": "CMS blog & content you can update yourself",
+      "feature3": "Lead forms, CRM & booking integrations",
+      "feature4": "Analytics dashboard + social proof sections"
     },
     "advanced": {
-      "eyebrow": "Advanced option",
-      "title": "Unleash full tech power",
-      "description": "Access automation, analytics, and custom solutions. For innovators who want to lead the way.",
-      "cta": "Learn more",
-      "imageAlt": "image of classroom lecture on ai"
+      "eyebrow": "Tier 03 · Dominance",
+      "title": "The digital experience your competitors can't match",
+      "description": "3D environments, AI-driven personalization, real-time data, and automation pipelines — your website becomes a complete digital ecosystem. For those who don't just want to compete, but to lead.",
+      "cta": "Enter the next level",
+      "badge": "Exclusive",
+      "upgrade": "Includes everything in Identity + full digital ecosystem",
+      "imageAlt": "advanced 3D interactive website with AI personalization and analytics",
+      "feature1": "3D interactive elements & WebGL environments",
+      "feature2": "AI personalization — content adapts per visitor",
+      "feature3": "Custom backend, APIs & real-time dashboards",
+      "feature4": "Full automation pipeline — leads to conversions"
+    },
+    "migration": {
+      "eyebrow": "Migration & Modernization",
+      "title": "Escape the Limits. Lower the Costs.",
+      "description": "Stuck in WordPress or high-hosting hell? We migrate your legacy stack to modern, high-performance architectures that scale infinitely while cutting your bills. Break free from borders and bloat.",
+      "cta": "Start My Migration",
+      "badge": "Optimization",
+      "upgrade": "From legacy stacks to modern edge",
+      "imageAlt": "Digital migration from legacy systems to modern cloud architecture",
+      "feature1": "WordPress to Next.js / Headless migration",
+      "feature2": "Cloud cost optimization & architectural audit",
+      "feature3": "Zero-downtime stack transition",
+      "feature4": "Custom deployment strategies for maximum speed"
     },
     "aiMarketing": {
       "eyebrow": "AI Marketing Agents",
       "title": "Automated Precision",
       "description": "Leverage AI agents for 24/7 engagement, data-driven ad optimization, and instant content scaling.",
       "cta": "Deploy AI",
-      "imageAlt": "ai interface visualization"
+      "badge": "AI Driven",
+      "upgrade": "Data-centric growth",
+      "imageAlt": "ai interface visualization for automated marketing",
+      "feature1": "24/7 autonomous engagement",
+      "feature2": "Data-driven ad optimization",
+      "feature3": "Instant multi-platform scaling",
+      "feature4": "Smart behavioral insights"
     },
     "humanMarketing": {
       "eyebrow": "Human Marketers",
       "title": "Creative Strategy",
       "description": "Expert marketers crafting emotional narratives, high-level strategy, and bespoke brand positioning.",
       "cta": "Hire Experts",
-      "imageAlt": "creative team meeting"
+      "badge": "Expert Led",
+      "upgrade": "High-level branding",
+      "imageAlt": "creative team meeting for marketing strategy",
+      "feature1": "Emotional brand narratives",
+      "feature2": "Bespoke market positioning",
+      "feature3": "High-level creative strategy",
+      "feature4": "Authentic brand storytelling"
     },
     "simpleAutomation": {
       "eyebrow": "Simple Automation",
       "title": "Streamline Workflows",
       "description": "Automate your repetitive tasks and save hours every week. Ideal for small businesses seeking efficiency.",
       "cta": "Automate Now",
-      "imageAlt": "visualization of simple digital workflow automation"
+      "badge": "Efficiency",
+      "upgrade": "Time-saving workflows",
+      "imageAlt": "visualization of simple digital workflow automation",
+      "feature1": "Repetitive task automation",
+      "feature2": "Process optimization flows",
+      "feature3": "Seamless app integrations",
+      "feature4": "Hours of weekly time savings"
     },
     "aiAgentAutomation": {
       "eyebrow": "AI Agent Automation",
       "title": "Intelligent Operations",
       "description": "Deploy custom AI agents to handle complex tasks, customer support, and data processing autonomously.",
       "cta": "Deploy Agents",
-      "imageAlt": "visualization of advanced ai agents at work"
+      "badge": "Autonomous",
+      "upgrade": "Enterprise intelligence",
+      "imageAlt": "visualization of advanced ai agents at work",
+      "feature1": "Custom autonomous AI agents",
+      "feature2": "Complex data processing",
+      "feature3": "24/7 support automation",
+      "feature4": "Intelligent task prioritization"
+    }
+  },
+  "presenceService": {
+    "hero": {
+      "title": "Establish Your Authority.",
+      "subtitle": "Professional Credibility, Delivered in 7 Days.",
+      "description": "Your website is your digital first impression. We don't just build pages; we build lightning-fast gateways that validate your business from the first second of interaction."
+    },
+    "comparison": {
+      "title": "The Performance Gap",
+      "subtitle": "Speed isn't just a metric—it's a psychological trigger. A slow site kills trust.",
+      "competitorLabel": "Generic Competitor",
+      "competitorStat": "45/100 Speed Score",
+      "ourLabel": "Next Level Presence",
+      "ourStat": "99/100 Speed Score",
+      "insight": "High-performing sites convert 3x more visitors into loyal leads."
+    },
+    "tech": {
+      "title": "Built for the Edge",
+      "item1": {
+        "title": "Static-Site Generation",
+        "desc": "Zero server-side lag. Your content is pre-rendered for instant delivery."
+      },
+      "item2": {
+        "title": "Edge Distribution",
+        "desc": "Hosted on a global CDN, making your site fast from anywhere on Earth."
+      },
+      "item3": {
+        "title": "Clean SEO Code",
+        "desc": "Semantic HTML and optimized metadata ensure Google loves your site from Day 1."
+      }
+    },
+    "roadmap": {
+      "title": "From Zero to Hero in 7 Days",
+      "step1": "Phase 01: The Digital Benefit",
+      "step2": "Phase 02: From Wishes to Reality",
+      "step3": "Phase 03: Virtual Consultation"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Awareness",
+        "title": "Know the benefit of having a website",
+        "description": "Having a website for your brand is not just a digital accessory—it’s a powerful business asset. It attracts, informs, convinces, and converts. For your company, it can be the backbone of your marketing department—feeding your agents with leads, analytics, and client insights.",
+        "benefitTitle1": "Visibility & Reach",
+        "benefitDesc1": "24/7 presence: Customers can discover your brand anytime, anywhere. Global reach: Break geographical barriers. Search engine visibility: Organic traffic via Google.",
+        "benefitTitle2": "Professional Credibility",
+        "benefitDesc2": "Trust factor: Signals legitimacy. First impression: The first place potential clients check. Showcase expertise: Testimonials and portfolios build confidence.",
+        "benefitTitle3": "Marketing & Growth",
+        "benefitDesc3": "Lead generation: Capture clients with forms. Analytics: Track behavior to refine strategy. Content hub: Position your brand as an authority.",
+        "benefitTitle4": "Efficiency & Automation",
+        "benefitDesc4": "Customer self-service: FAQs and booking. Integration: Connect CRM and social workflows. Scalability: Your website grows with your business.",
+        "benefitTitle5": "Revenue & Conversion",
+        "benefitDesc5": "E-commerce: Sell directly online. Persuasive design: Highlight solutions to convert visitors. Reduced costs: More reach than traditional ads.",
+        "benefitTitle6": "Digital Headquarters",
+        "benefitDesc6": "In short, your website is your digital HQ: it attracts, informs, convinces, and converts visitors into loyal paying customers."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Creation",
+        "title": "From Wishes to Reality",
+        "description": "This is where your vision takes physical form. Tell us exactly what you've been dreaming of—the colors, the vibe, the specific features that will make your brand legendary.",
+        "inputLabel": "Describe your design needs...",
+        "inputPlaceholder": "I want a minimalist aesthetic with high-performance animations and a dark theme...",
+        "submit": "Send My Vision"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Connection",
+        "title": "Virtual Consultation",
+        "description": "We dive deep into your vision through our interactive strategy funnel. This isn't just a meeting; it's a collaborative architectural session where we align your goals with the latest tech possibilities.",
+        "cta": "Start Assessment Below"
+      }
+    },
+    "footerCta": {
+      "title": "Ready to Stop Being Invisible?",
+      "button": "Check Brand Readiness"
+    },
+    "discoveryFunnel": {
+      "title": "Strategy Session",
+      "steps": {
+        "step1": {
+          "question": "What is your current digital status?",
+          "option1": "I have no website yet",
+          "option2": "I have an old/slow website",
+          "option3": "I'm launching a new brand"
+        },
+        "step2": {
+          "question": "What is your primary goal for this site?",
+          "option1": "Establish professional credibility",
+          "option2": "Generate new leads quickly",
+          "option3": "Explain a complex product/service"
+        },
+        "step3": {
+          "question": "Final Step: Where should we send your roadmap?",
+          "namePlaceholder": "Your Name",
+          "brandPlaceholder": "Company or Brand Name",
+          "emailPlaceholder": "Your Email",
+          "phonePlaceholder": "Phone Number",
+          "submit": "Generate My Strategy"
+        }
+      },
+      "success": {
+        "title": "Booking Confirmed!",
+        "message": "We have booked your free call consultation. Our team will contact you soon to finalize your roadmap."
+      }
+    }
+  },
+  "identityService": {
+    "hero": {
+      "title": "Build Your Digital Identity.",
+      "subtitle": "Interactive, Integrated, and Built to Convert.",
+      "description": "Moving beyond a simple presence. We architect digital identities that breathe, interact, and work as a 24/7 sales force for your brand."
+    },
+    "comparison": {
+      "title": "The Conversion Edge",
+      "subtitle": "Passive sites inform. Active identities convert. Don't just show up; close the deal.",
+      "competitorLabel": "Basic Brochure Site",
+      "competitorStat": "1.2% Conversion Rate",
+      "ourLabel": "Next Level Identity",
+      "ourStat": "4.8% Conversion Rate",
+      "insight": "Integrated systems and smart UX double your customer retention."
+    },
+    "tech": {
+      "title": "Integrated Ecosystems",
+      "item1": {
+        "title": "CMS Integration",
+        "desc": "Manage your content effortlessly. No code, just creativity."
+      },
+      "item2": {
+        "title": "CRM & Booking",
+        "desc": "Seamlessly connect your leads to your calendar and sales pipeline."
+      },
+      "item3": {
+        "title": "Micro-Interactions",
+        "desc": "Subtle animations that guide the user journey and reinforce brand quality."
+      }
+    },
+    "roadmap": {
+      "title": "Your Growth Blueprint",
+      "step1": "Phase 01: Strategic Audit",
+      "step2": "Phase 02: Architectural Build",
+      "step3": "Phase 03: Integration Test"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Strategy",
+        "title": "Defining Your Digital Soul",
+        "description": "We don't just pick colors. We map your user's psychological journey from 'just looking' to 'loyal client'. We analyze your competitors and find the gap you were born to fill.",
+        "benefitTitle1": "Competitor Analysis",
+        "benefitDesc1": "See exactly where others are failing and how we can win.",
+        "benefitTitle2": "User Persona Mapping",
+        "benefitDesc2": "Knowing exactly who we are talking to and what they desire.",
+        "benefitTitle3": "Conversion Flow",
+        "benefitDesc3": "Designing the shortest path between curiosity and payment."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Architecture",
+        "title": "Building the Engine",
+        "description": "Your vision meets our engineering. We build a custom CMS, integrate your favorite tools, and craft an interface that feels like an extension of your physical office.",
+        "inputLabel": "List your required integrations...",
+        "inputPlaceholder": "HubSpot, Calendly, Stripe, Custom Blog...",
+        "submit": "Build My Engine"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Launch",
+        "title": "Stress Testing the Identity",
+        "description": "Before the world sees it, we break it. We test every form, every button, and every automation to ensure your brand's reputation is ironclad.",
+        "cta": "Finalize My Identity Assessment"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Identity Discovery",
+      "steps": {
+        "step1": {
+          "question": "What is your primary conversion tool?",
+          "option1": "Direct Sales / E-commerce",
+          "option2": "Lead Generation / Booking",
+          "option3": "Newsletter / Community"
+        },
+        "step2": {
+          "question": "How do you manage clients today?",
+          "option1": "Manual Email/Spreadsheets",
+          "option2": "Basic CRM (HubSpot/Salesforce)",
+          "option3": "I need a custom system"
+        },
+        "step3": {
+          "question": "Where should we send your Identity Blueprint?",
+          "namePlaceholder": "Your Name",
+          "brandPlaceholder": "Brand Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Contact Number",
+          "submit": "Architect My Identity"
+        }
+      }
+    }
+  },
+  "dominanceService": {
+    "hero": {
+      "title": "Command Your Market.",
+      "subtitle": "3D Experiences, AI Personalization, Absolute Dominance.",
+      "description": "For those who refuse to follow. We build digital cathedrals—unforgettable, immersive ecosystems that redefine what a website can be."
+    },
+    "comparison": {
+      "title": "The Innovation Gap",
+      "subtitle": "Standard sites are forgotten. Immersive ecosystems are legendary.",
+      "competitorLabel": "Industry Standard",
+      "competitorStat": "2 min Avg. Session",
+      "ourLabel": "Next Level Dominance",
+      "ourStat": "12 min Avg. Session",
+      "insight": "Immersion leads to 10x higher brand recall and premium perception."
+    },
+    "tech": {
+      "title": "Tomorrow's Stack, Today",
+      "item1": {
+        "title": "WebGL & 3D",
+        "desc": "Bespoke 3D environments that users can explore in real-time."
+      },
+      "item2": {
+        "title": "AI Personalization",
+        "desc": "A website that learns. Content shifts dynamically based on user behavior."
+      },
+      "item3": {
+        "title": "Real-time Data",
+        "desc": "Live dashboards and interactive visualizations of your company's pulse."
+      }
+    },
+    "roadmap": {
+      "title": "The Dominance Protocol",
+      "step1": "Phase 01: Concept Immersion",
+      "step2": "Phase 02: World Building",
+      "step3": "Phase 03: Deployment"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Concept",
+        "title": "Breaking the Fourth Wall",
+        "description": "We explore the outer limits of your brand. If your business were a physical world, what would it feel like? We design the atmosphere, the physics, and the narrative.",
+        "benefitTitle1": "Creative Direction",
+        "benefitDesc1": "Bespoke visual language that defines a new industry standard.",
+        "benefitTitle2": "Narrative Design",
+        "benefitDesc2": "Turning your service into a story the user lives through.",
+        "benefitTitle3": "Tech Feasibility",
+        "benefitDesc3": "Selecting the bleeding-edge tools to make the impossible real."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: World Building",
+        "title": "Architecting the Unreal",
+        "description": "Our developers and 3D artists work in tandem. We build custom shaders, AI models, and real-time interactive elements that respond to every user click.",
+        "inputLabel": "What is the 'Magic Moment' for your user?",
+        "inputPlaceholder": "I want them to feel like they are floating through a galaxy of our data...",
+        "submit": "Initialize World Building"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Dominance",
+        "title": "The Global Launch",
+        "description": "Deployment at the edge. We ensure your massive digital ecosystem loads instantly across the globe using advanced pre-fetching and asset optimization.",
+        "cta": "Claim Your Digital Throne"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Dominance Strategy",
+      "steps": {
+        "step1": {
+          "question": "What is your biggest competitive advantage?",
+          "option1": "Unmatched Innovation",
+          "option2": "Deep Heritage / Quality",
+          "option3": "Absolute Scale"
+        },
+        "step2": {
+          "question": "What 'Next Level' feature do you crave?",
+          "option1": "Immersive 3D Experience",
+          "option2": "AI-Driven Personalization",
+          "option3": "Custom Real-time Dashboard"
+        },
+        "step3": {
+          "question": "Where should we send your Dominance Roadmap?",
+          "namePlaceholder": "Visionary Name",
+          "brandPlaceholder": "Empire Name",
+          "emailPlaceholder": "Executive Email",
+          "phonePlaceholder": "Direct Line",
+          "submit": "Launch My Protocol"
+        }
+      }
+    }
+  },
+  "aiAutomationService": {
+    "hero": {
+      "title": "Automate Your Intelligence.",
+      "subtitle": "24/7 AI Agents That Think, Act, and Scale.",
+      "description": "Stop working in your business; start working on it. We deploy autonomous AI agents that handle your customer support, lead qualification, and data processing while you sleep."
+    },
+    "comparison": {
+      "title": "The Efficiency Gap",
+      "subtitle": "Human limits vs. AI potential. Scalability without the headcount.",
+      "competitorLabel": "Standard Human Team",
+      "competitorStat": "8-hour Response Time",
+      "ourLabel": "AI Agent Squad",
+      "ourStat": "< 1 sec Response Time",
+      "insight": "AI-driven companies see a 40% reduction in operational costs within 6 months."
+    },
+    "tech": {
+      "title": "The Neural Engine",
+      "item1": {
+        "title": "LLM Customization",
+        "desc": "Agents trained on YOUR data, YOUR voice, and YOUR rules."
+      },
+      "item2": {
+        "title": "Autonomous Workflows",
+        "desc": "Agents that can trigger emails, update CRMs, and schedule calls without human help."
+      },
+      "item3": {
+        "title": "Self-Correcting Data",
+        "desc": "Systems that identify errors in your data and fix them in real-time."
+      }
+    },
+    "roadmap": {
+      "title": "Automation Roadmap",
+      "step1": "Phase 01: Process Mapping",
+      "step2": "Phase 02: Agent Training",
+      "step3": "Phase 03: Deployment"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Analysis",
+        "title": "Identifying the Bottlenecks",
+        "description": "We map every repetitive task in your organization. If it can be described, it can be automated. We find the high-impact zones where AI can save the most time.",
+        "benefitTitle1": "Operational Audit",
+        "benefitDesc1": "A complete map of your time-drains and manual errors.",
+        "benefitTitle2": "ROI Projection",
+        "benefitDesc2": "Exactly how many hours and dollars you'll save per month.",
+        "benefitTitle3": "Agent Design",
+        "benefitDesc3": "Defining the 'personality' and authority of your AI workforce."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Intelligence",
+        "title": "Training the Workforce",
+        "description": "We feed your documentation, emails, and brand guidelines into our secure AI models. Your agents learn your business better than a new hire, instantly.",
+        "inputLabel": "What is the #1 task you want to delegate?",
+        "inputPlaceholder": "Qualifying incoming leads from our website...",
+        "submit": "Initialize Agent Training"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Integration",
+        "title": "Going Autonomous",
+        "description": "We connect your agents to your existing tech stack—Slack, HubSpot, Gmail, and more. They start working immediately, providing 24/7 value.",
+        "cta": "Hire Your First AI Agent"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Automation Audit",
+      "steps": {
+        "step1": {
+          "question": "What takes up most of your team's time?",
+          "option1": "Customer Support Queries",
+          "option2": "Manual Data Entry / Admin",
+          "option3": "Qualifying / Nurturing Leads"
+        },
+        "step2": {
+          "question": "Which tech do you already use?",
+          "option1": "Slack / Communication Tools",
+          "option2": "CRMs (HubSpot, etc.)",
+          "option3": "Custom Internal Databases"
+        },
+        "step3": {
+          "question": "Where should we send your Automation ROI report?",
+          "namePlaceholder": "Founder Name",
+          "brandPlaceholder": "Company Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Mobile",
+          "submit": "Calculate My Savings"
+        }
+      }
+    }
+  },
+  "migrationService": {
+    "hero": {
+      "title": "Migrate to the Future.",
+      "subtitle": "Zero Downtime. Maximum Performance. Lower Costs.",
+      "description": "Escape the gravity of legacy systems. We migrate your business to modern cloud-native architectures that are faster, cheaper, and ready to scale."
+    },
+    "comparison": {
+      "title": "The Modernization Gap",
+      "subtitle": "Legacy bloat vs. Edge performance. Stop paying for inefficiency.",
+      "competitorLabel": "Legacy Stack (WordPress/PHP)",
+      "competitorStat": "$500/mo Hosting",
+      "ourLabel": "Next Level Edge",
+      "ourStat": "$0 - $20/mo Hosting",
+      "insight": "Modernizing your stack reduces technical debt and infrastructure costs by up to 80%."
+    },
+    "tech": {
+      "title": "Cloud-Native Power",
+      "item1": {
+        "title": "Headless Architecture",
+        "desc": "Decouple your content from your code for ultimate flexibility and speed."
+      },
+      "item2": {
+        "title": "Serverless Deployment",
+        "desc": "Only pay for what you use. Scale to millions of users without managing servers."
+      },
+      "item3": {
+        "title": "Zero-Downtime Migration",
+        "desc": "We move your data and traffic seamlessly while your business keeps running."
+      }
+    },
+    "roadmap": {
+      "title": "Migration Protocol",
+      "step1": "Phase 01: System Audit",
+      "step2": "Phase 02: Shadow Build",
+      "step3": "Phase 03: Switchover"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Audit",
+        "title": "Exposing the Inefficiencies",
+        "description": "We perform a deep-dive audit of your current hosting, database, and code quality. We identify the 'bottleneck' services that are costing you the most money and speed.",
+        "benefitTitle1": "Cost Audit",
+        "benefitDesc1": "Mapping exactly where your infrastructure budget is being wasted.",
+        "benefitTitle2": "Performance Profiling",
+        "benefitDesc2": "Identifying the slow queries and legacy scripts killing your UX.",
+        "benefitTitle3": "Security Check",
+        "benefitDesc3": "Exposing vulnerabilities in your outdated plugins and frameworks."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Shadow Build",
+        "title": "The Parallel Universe",
+        "description": "We build your new modern site in a 'shadow' environment. Your live site stays untouched while we refine the new performance-first version with all your existing data.",
+        "inputLabel": "What is your current tech stack?",
+        "inputPlaceholder": "WordPress, Shopify, Custom PHP, Magento...",
+        "submit": "Initialize Shadow Build"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Switchover",
+        "title": "The Great Escape",
+        "description": "Once the shadow build is verified, we flip the switch. Using advanced DNS strategies, we migrate your traffic to the new stack with zero interruption to your customers.",
+        "cta": "Modernize My Business"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Migration Strategy",
+      "steps": {
+        "step1": {
+          "question": "Why do you want to migrate?",
+          "option1": "Site is too slow / Bad UX",
+          "option2": "Hosting costs are too high",
+          "option3": "Need modern features (AI/Apps)"
+        },
+        "step2": {
+          "question": "How much traffic do you handle?",
+          "option1": "0 - 10k monthly visitors",
+          "option2": "10k - 100k monthly visitors",
+          "option3": "Enterprise / High Scale"
+        },
+        "step3": {
+          "question": "Where should we send your Migration Audit?",
+          "namePlaceholder": "Technical Lead Name",
+          "brandPlaceholder": "Company Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Direct Line",
+          "submit": "Generate My Audit"
+        }
+      }
+    }
+  },
+  "marketingService": {
+    "hero": {
+      "title": "Scale Your Influence.",
+      "subtitle": "AI Precision. Human Creativity. Unstoppable Growth.",
+      "description": "Stop shouting into the void. We combine the emotional depth of human strategy with the 24/7 execution power of AI to dominate your market's attention."
+    },
+    "comparison": {
+      "title": "The Engagement Gap",
+      "subtitle": "Noise vs. Resonance. Why most marketing fails to convert.",
+      "competitorLabel": "Standard Ad Agency",
+      "competitorStat": "Static Creative",
+      "ourLabel": "Next Level Marketing",
+      "ourStat": "AI-Dynamic Personalization",
+      "insight": "Personalized content experiences drive 5x higher engagement than generic ads."
+    },
+    "tech": {
+      "title": "The Growth Stack",
+      "item1": {
+        "title": "Behavioral Targeting",
+        "desc": "Reach customers based on what they DO, not just who they are."
+      },
+      "item2": {
+        "title": "AI Content Engines",
+        "desc": "Generate thousands of high-quality ad variations in seconds."
+      },
+      "item3": {
+        "title": "Attribution Modeling",
+        "desc": "Know exactly which dollar spent is bringing in which dollar of revenue."
+      }
+    },
+    "roadmap": {
+      "title": "The Growth Protocol",
+      "step1": "Phase 01: Brand Narrative",
+      "step2": "Phase 02: Engine Deployment",
+      "step3": "Phase 03: Scale Phase"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Narrative",
+        "title": "Finding Your Signal",
+        "description": "We strip away the jargon to find the emotional core of your brand. Our human strategists craft the 'Hook' that will stop the scroll and start the conversation.",
+        "benefitTitle1": "Brand Voice Design",
+        "benefitDesc1": "Creating a unique, consistent personality for your brand.",
+        "benefitTitle2": "Offer Architecture",
+        "benefitDesc2": "Structuring your product so it's impossible to ignore.",
+        "benefitTitle3": "Content Strategy",
+        "benefitDesc3": "Mapping the narrative arc across every social channel."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Engine",
+        "title": "Deploying the AI Sentry",
+        "description": "We set up your AI marketing agents. They monitor your ads 24/7, adjusting bids, swapping creatives, and engaging with commenters instantly while your team focuses on strategy.",
+        "inputLabel": "Who is your dream customer?",
+        "inputPlaceholder": "Tech founders in Europe looking to automate their sales...",
+        "submit": "Initialize Marketing Engine"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Scale",
+        "title": "Pouring Fuel on the Fire",
+        "description": "Once we find the winning narrative, we scale. Using automated pipelines, we expand your reach from local to global without increasing your team's workload.",
+        "cta": "Dominate My Market"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Growth Discovery",
+      "steps": {
+        "step1": {
+          "question": "What is your biggest marketing challenge?",
+          "option1": "High Cost per Acquisition",
+          "option2": "Low Brand Awareness",
+          "option3": "Difficulty Scaling Content"
+        },
+        "step2": {
+          "question": "What is your monthly growth budget?",
+          "option1": "$1k - $5k / mo",
+          "option2": "$5k - $25k / mo",
+          "option3": "Enterprise / Unlimited"
+        },
+        "step3": {
+          "question": "Where should we send your Growth Strategy?",
+          "namePlaceholder": "Marketing Director",
+          "brandPlaceholder": "Brand Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Contact Number",
+          "submit": "Generate My Strategy"
+        }
+      }
+    }
+  },
+  "simpleAutomationService": {
+    "hero": {
+      "title": "Streamline Your Workflows.",
+      "subtitle": "Efficiency on Autopilot. Hours Saved Weekly.",
+      "description": "Stop fighting with spreadsheets. We build simple, powerful automation workflows that connect your apps and handle repetitive tasks while you focus on what matters."
+    },
+    "comparison": {
+      "title": "The Efficiency Gap",
+      "subtitle": "Manual labor vs. Automated flow. Time is your most valuable asset.",
+      "competitorLabel": "Manual Data Entry",
+      "competitorStat": "15 hours / week",
+      "ourLabel": "Automated Workflows",
+      "ourStat": "< 5 mins / week",
+      "insight": "Simple automations pay for themselves within the first month by reclaiming lost productivity."
+    },
+    "tech": {
+      "title": "Seamless Connectivity",
+      "item1": {
+        "title": "App Integrations",
+        "desc": "Connecting 6,000+ apps like Shopify, HubSpot, Slack, and Google Sheets."
+      },
+      "item2": {
+        "title": "Error-Free Logic",
+        "desc": "Automations that never sleep and never make a typo."
+      },
+      "item3": {
+        "title": "Custom Triggers",
+        "desc": "Workflows that start based on your unique business events."
+      }
+    },
+    "roadmap": {
+      "title": "Automation Roadmap",
+      "step1": "Phase 01: Process Audit",
+      "step2": "Phase 02: Workflow Build",
+      "step3": "Phase 03: Live Sync"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Audit",
+        "title": "Mapping the Repetitive",
+        "description": "We identify the boring, manual tasks that are draining your energy. If you have to do it twice, it's a candidate for automation.",
+        "benefitTitle1": "Time-Waste Audit",
+        "benefitDesc1": "Identifying exactly where your team is wasting hours on admin.",
+        "benefitTitle2": "Integration Map",
+        "benefitDesc2": "Visualizing how your different software tools should talk to each other.",
+        "benefitTitle3": "ROI Calculation",
+        "benefitDesc3": "Showing you exactly how much time we will reclaim for your business."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Build",
+        "title": "Constructing the Flow",
+        "description": "We build custom triggers and actions that move data between your apps seamlessly. We handle the complex logic so you don't have to.",
+        "inputLabel": "Which apps do you use most?",
+        "inputPlaceholder": "Excel, Gmail, Slack, Stripe, Typeform...",
+        "submit": "Build My Workflow"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Sync",
+        "title": "Going Live",
+        "description": "We turn on the engines. Your workflows start running instantly, syncing data and handling tasks without a single human click.",
+        "cta": "Start My Automation Journey"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Automation Discovery",
+      "steps": {
+        "step1": {
+          "question": "Which task bothers you the most?",
+          "option1": "Copy-pasting data between apps",
+          "option2": "Sending manual follow-up emails",
+          "option3": "Managing invoices and payments"
+        },
+        "step2": {
+          "question": "How many hours do you spend on admin?",
+          "option1": "1-5 hours / week",
+          "option2": "5-20 hours / week",
+          "option3": "Too many to count"
+        },
+        "step3": {
+          "question": "Where should we send your Workflow Audit?",
+          "namePlaceholder": "Business Owner",
+          "brandPlaceholder": "Company Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Phone Number",
+          "submit": "Reclaim My Time"
+        }
+      }
+    }
+  },
+  "appDevService": {
+    "hero": {
+      "title": "Build Your Vision.",
+      "subtitle": "Scalable Apps. Seamless UX. Rapid MVP.",
+      "description": "Turn your complex ideas into high-performance mobile and web applications. We focus on scalability, security, and a user experience that keeps people coming back."
+    },
+    "comparison": {
+      "title": "The Reliability Gap",
+      "subtitle": "Bugs vs. Stability. Why your architecture matters.",
+      "competitorLabel": "Generic App Build",
+      "competitorStat": "5s App Load Time",
+      "ourLabel": "Next Level App",
+      "ourStat": "< 1.5s App Load Time",
+      "insight": "High-performance apps retain 70% more users than slower competitors."
+    },
+    "tech": {
+      "title": "Full-Stack Excellence",
+      "item1": {
+        "title": "Cross-Platform",
+        "desc": "Build once, deploy everywhere with React Native and Expo."
+      },
+      "item2": {
+        "title": "Scalable APIs",
+        "desc": "Robust backends built with Node.js, Go, or Python to handle millions."
+      },
+      "item3": {
+        "title": "Cloud Native",
+        "desc": "Automated deployments and infrastructure as code (IaC)."
+      }
+    },
+    "roadmap": {
+      "title": "Development Roadmap",
+      "step1": "Phase 01: MVP Blueprint",
+      "step2": "Phase 02: Sprint Cycles",
+      "step3": "Phase 03: Store Launch"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Blueprint",
+        "title": "Architecting the MVP",
+        "description": "We strip your idea down to its most powerful core features. We design the user flow and the technical architecture to ensure long-term scalability.",
+        "benefitTitle1": "Feature Prioritization",
+        "benefitDesc1": "Focusing on the 20% of features that bring 80% of the value.",
+        "benefitTitle2": "Tech Stack Selection",
+        "benefitDesc2": "Choosing the right tools for your specific performance needs.",
+        "benefitTitle3": "UI/UX Prototyping",
+        "benefitDesc3": "Interactive wireframes so you can feel the app before we build it."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Sprints",
+        "title": "Rapid Iteration",
+        "description": "Our developers work in agile sprints. You see progress every week. We test, refine, and build until the app feels like magic in your hands.",
+        "inputLabel": "What is the core problem your app solves?",
+        "inputPlaceholder": "Helping busy parents find local tutors in under 3 clicks...",
+        "submit": "Initialize Sprints"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Launch",
+        "title": "To the Stores",
+        "description": "We handle the entire submission process for iOS and Android. We set up your monitoring, analytics, and scaling infrastructure for launch day.",
+        "cta": "Build My App"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "App Discovery",
+      "steps": {
+        "step1": {
+          "question": "What is the status of your app idea?",
+          "option1": "Just an idea / Concept",
+          "option2": "I have wireframes / Design",
+          "option3": "I need to rebuild an existing app"
+        },
+        "step2": {
+          "question": "Which platform is your priority?",
+          "option1": "iOS & Android (Cross-platform)",
+          "option2": "Web-based Application",
+          "option3": "Internal Enterprise Tool"
+        },
+        "step3": {
+          "question": "Where should we send your App Blueprint?",
+          "namePlaceholder": "Founder Name",
+          "brandPlaceholder": "App Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Phone Number",
+          "submit": "Get My Roadmap"
+        }
+      }
+    }
+  },
+  "dataService": {
+    "hero": {
+      "title": "Master Your Data.",
+      "subtitle": "Clear Insights. Clean Storage. Smart Analytics.",
+      "description": "Stop guessing. We organize your chaotic data into clean, structured ecosystems and build interactive dashboards that tell the story of your business's future."
+    },
+    "comparison": {
+      "title": "The Clarity Gap",
+      "subtitle": "Raw noise vs. Actionable signals. Data is the new oil.",
+      "competitorLabel": "Manual Spreadsheets",
+      "competitorStat": "Outdated Info",
+      "ourLabel": "Next Level Analytics",
+      "ourStat": "Real-time Pulse",
+      "insight": "Data-driven companies are 23x more likely to acquire customers."
+    },
+    "tech": {
+      "title": "The Intelligence Stack",
+      "item1": {
+        "title": "ETL Pipelines",
+        "desc": "Extract, Transform, and Load your data from any source automatically."
+      },
+      "item2": {
+        "title": "Cloud Warehousing",
+        "desc": "Secure, scalable storage for all your historical and live data."
+      },
+      "item3": {
+        "title": "BI Dashboards",
+        "desc": "Custom interactive visualizations that highlight your KPIs instantly."
+      }
+    },
+    "roadmap": {
+      "title": "Data Roadmap",
+      "step1": "Phase 01: Data Audit",
+      "step2": "Phase 02: Pipeline Build",
+      "step3": "Phase 03: Insight Launch"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Step 1: Audit",
+        "title": "Exposing the Silos",
+        "description": "We find where your data is hidden. We analyze your current storage methods and identify the gaps in your tracking that are costing you insights.",
+        "benefitTitle1": "Source Inventory",
+        "benefitDesc1": "Mapping every piece of data your business generates.",
+        "benefitTitle2": "Quality Assessment",
+        "benefitDesc2": "Identifying 'dirty' data that is leading to bad decisions.",
+        "benefitTitle3": "Security Audit",
+        "benefitDesc3": "Ensuring your data is compliant and protected at every level."
+      },
+      "phase2": {
+        "eyebrow": "Step 2: Pipeline",
+        "title": "Architecting the Flow",
+        "description": "We build the pipes. Your data starts moving from its silos into a centralized warehouse, being cleaned and structured automatically along the way.",
+        "inputLabel": "What is the #1 question you can't answer today?",
+        "inputPlaceholder": "Which marketing channel has the highest LTV after 6 months?...",
+        "submit": "Initialize Pipeline"
+      },
+      "phase3": {
+        "eyebrow": "Step 3: Insights",
+        "title": "Command Center",
+        "description": "We launch your custom dashboards. You can now see the pulse of your business in real-time, on any device, anywhere in the world.",
+        "cta": "Master My Data"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Data Strategy",
+      "steps": {
+        "step1": {
+          "question": "What is your biggest data headache?",
+          "option1": "Data is scattered in 10+ apps",
+          "option2": "I don't trust my current numbers",
+          "option3": "I need better visual reports"
+        },
+        "step2": {
+          "question": "Which tools do you need to track?",
+          "option1": "Sales & CRM Data",
+          "option2": "Marketing & Ad Spend",
+          "option3": "Inventory / Logistics"
+        },
+        "step3": {
+          "question": "Where should we send your Data Roadmap?",
+          "namePlaceholder": "Data Lead Name",
+          "brandPlaceholder": "Company Name",
+          "emailPlaceholder": "Work Email",
+          "phonePlaceholder": "Mobile",
+          "submit": "Show Me the Insights"
+        }
+      }
     }
   },
   "content": {
@@ -223,24 +1093,24 @@
     ]
   },
   "faq": {
-    "title": "Your tech questions, simply solved",
-    "description": "Explore our most common questions and discover how we make tech easy, approachable, and tailored for you. We're here to guide you every step of the way.",
+    "title": "Your questions, answered clearly",
+    "description": "Everything you need to know about our web creation tiers, services, and process — so you can make the right choice with confidence.",
     "questions": [
       {
-        "question": "Which services are available?",
-        "answer": "We offer website creation, app development, data analytics, and automation services—each with flexible options. Choose what fits your vision and we'll handle the rest."
+        "question": "What's the difference between Presence, Identity, and Dominance?",
+        "answer": "Presence is your professional launchpad — fast, clean, and credible. Identity adds interactivity, integrations, and conversion tools. Dominance is the full ecosystem: 3D elements, AI personalization, custom architecture, and automation. Each tier builds on the last."
       },
       {
-        "question": "How do I pick my best fit?",
-        "answer": "Share your goals, timeline, and budget with us. We'll walk you through your options and help you find the perfect match for your project."
+        "question": "Can I start with Presence and upgrade later?",
+        "answer": "Absolutely. Every project is built to scale. You can start with Presence and move to Identity or Dominance whenever you're ready — no data loss, no rebuilding from scratch."
       },
       {
-        "question": "Is it easy to upgrade later?",
-        "answer": "Yes! Start simple and scale up whenever you're ready. Upgrading is smooth and hassle-free, so your tech can grow with you."
+        "question": "How long does each tier take to deliver?",
+        "answer": "Presence launches in days. Identity typically takes 2–4 weeks. Dominance is a full custom build, usually 6–10 weeks depending on scope. We keep you informed at every stage."
       },
       {
-        "question": "What sets your team apart?",
-        "answer": "We combine future-focused ideas with real-world solutions, keeping you informed and inspired. Our process is transparent, collaborative, and always a step ahead."
+        "question": "What makes The Next Level Tech Company different?",
+        "answer": "We combine AI-powered tools with human creativity. Every project gets custom design, strategic thinking, and ongoing support — not a template. We build for growth, not just launch."
       }
     ]
   },

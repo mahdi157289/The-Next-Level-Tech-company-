@@ -114,56 +114,214 @@
     "getQuote": "Demander un devis"
   },
   "serviceTiers": {
-    "eyebrow": "Nos solutions pour",
-    "title": "Élevez votre expérience numérique",
+    "eyebrow": "Niveaux de création web",
+    "title": "Choisissez votre niveau d'impact",
     "static": {
-      "eyebrow": "Option statique",
-      "title": "Lancez-vous avec un site simple",
-      "description": "Commencez fort avec un site web élégant et fiable. Pas de complications—juste une base solide pour votre présence en ligne.",
-      "cta": "Commencer",
-      "imageAlt": "image d'un professionnel confiant"
+      "eyebrow": "Niveau 01 · Présence",
+      "title": "Votre marque. En ligne. Instantanément.",
+      "description": "Vous avez une vision — laissez le monde la voir. Un site web propre, rapide et magnifiquement conçu qui met votre nom sur la carte. Zéro complexité, crédibilité maximale dès le premier jour.",
+      "cta": "Revendiquez votre espace",
+      "badge": "Lancement Rapide",
+      "upgrade": "Commencez ici — mise à niveau possible à tout moment, sans perte de données",
+      "imageAlt": "présence professionnelle en ligne pour une nouvelle marque",
+      "feature1": "En ligne en jours, pas en mois",
+      "feature2": "Design sur mesure — vos couleurs, polices, logo",
+      "feature3": "Mobile-first et SEO-ready dès le premier jour",
+      "feature4": "Jusqu'à 5 pages : Accueil, À propos, Services, Contact"
     },
     "standard": {
-      "eyebrow": "Option standard",
-      "title": "Développez avec des fonctionnalités intelligentes",
-      "description": "Ajoutez des outils interactifs et des intégrations au fur et à mesure de votre croissance. Idéal pour les équipes prêtes à franchir l'étape suivante.",
-      "cta": "Explorer",
-      "imageAlt": "image d'un tableau de stratégie de marketing numérique"
+      "eyebrow": "Niveau 02 · Identité",
+      "title": "Un site qui pense, bouge et vend",
+      "description": "Votre site web doit travailler pour vous pendant que vous dormez. Systèmes de réservation, contenu en direct, intégrations CRM — tout synchronisé avec le rythme de votre marque. Conçu pour convertir les visiteurs en clients.",
+      "cta": "Construire mon identité",
+      "badge": "Recommandé",
+      "upgrade": "Inclut tout de Présence, plus des fonctionnalités intelligentes",
+      "imageAlt": "site web d'identité de marque dynamique avec fonctionnalités interactives",
+      "feature1": "Animations personnalisées & micro-interactions",
+      "feature2": "Blog CMS & contenu que vous pouvez mettre à jour vous-même",
+      "feature3": "Formulaires de leads, CRM & intégrations de réservation",
+      "feature4": "Tableau de bord analytique + sections de preuve sociale"
     },
     "advanced": {
-      "eyebrow": "Option avancée",
-      "title": "Libérez toute la puissance technologique",
-      "description": "Accédez à l'automatisation, aux analyses et aux solutions personnalisées. Pour les innovateurs qui veulent montrer la voie.",
-      "cta": "En savoir plus",
-      "imageAlt": "image d'un cours en classe sur l'IA"
+      "eyebrow": "Niveau 03 · Domination",
+      "title": "L'expérience numérique que vos concurrents ne peuvent égaler",
+      "description": "Environnements 3D, personnalisation par IA, données en temps réel et pipelines d'automatisation — votre site devient un écosystème numérique complet. Pour ceux qui ne veulent pas juste concurrencer, mais dominer.",
+      "cta": "Entrer au niveau suivant",
+      "badge": "Exclusif",
+      "upgrade": "Inclut tout de Identité + écosystème numérique complet",
+      "imageAlt": "site web 3D interactif avancé avec personnalisation IA et analyses",
+      "feature1": "Éléments 3D interactifs & environnements WebGL",
+      "feature2": "Personnalisation IA — le contenu s'adapte à chaque visiteur",
+      "feature3": "Backend personnalisé, APIs & tableaux de bord en temps réel",
+      "feature4": "Pipeline d'automatisation complet — des leads aux conversions"
+    },
+    "migration": {
+      "eyebrow": "Migration & Modernisation",
+      "title": "Échappez aux Limites. Réduisez les Coûts.",
+      "description": "Bloqué sur WordPress ou dans l'enfer des hébergements coûteux ? Nous migrons votre pile héritée vers des architectures modernes et performantes qui évoluent à l'infini tout en réduisant vos factures. Libérez-vous des frontières.",
+      "cta": "Démarrer ma Migration",
+      "badge": "Optimisation",
+      "upgrade": "De l'héritage vers la modernité",
+      "imageAlt": "Migration numérique des systèmes hérités vers une architecture cloud moderne",
+      "feature1": "Migration WordPress vers Next.js / Headless",
+      "feature2": "Optimisation des coûts cloud et audit architectural",
+      "feature3": "Transition de pile sans interruption de service",
+      "feature4": "Stratégies de déploiement sur mesure pour une vitesse maximale"
     },
     "aiMarketing": {
       "eyebrow": "Agents Marketing IA",
       "title": "Précision Automatisée",
       "description": "Exploitez les agents IA pour un engagement 24/7, une optimisation publicitaire basée sur les données et une mise à l'échelle instantanée du contenu.",
       "cta": "Déployer l'IA",
-      "imageAlt": "visualisation d'interface ia"
+      "badge": "Propulsé par l'IA",
+      "upgrade": "Croissance centrée sur les données",
+      "imageAlt": "visualisation d'interface ia pour le marketing automatisé",
+      "feature1": "Engagement autonome 24/7",
+      "feature2": "Optimisation publicitaire par les données",
+      "feature3": "Mise à l'échelle multi-plateforme",
+      "feature4": "Aperçus comportementaux intelligents"
     },
     "humanMarketing": {
       "eyebrow": "Marketeurs Humains",
       "title": "Stratégie Créative",
       "description": "Des marketeurs experts créant des récits émotionnels, une stratégie de haut niveau et un positionnement de marque sur mesure.",
       "cta": "Engager des Experts",
-      "imageAlt": "réunion d'équipe créative"
+      "badge": "Dirigé par des Experts",
+      "upgrade": "Branding de haut niveau",
+      "imageAlt": "réunion d'équipe créative pour la stratégie marketing",
+      "feature1": "Récits de marque émotionnels",
+      "feature2": "Positionnement de marché sur mesure",
+      "feature3": "Stratégie créative stratégique",
+      "feature4": "Storytelling de marque authentique"
     },
     "simpleAutomation": {
       "eyebrow": "Automatisation Simple",
-      "title": "Rationaliser les flux",
+      "title": "Simplifiez vos Flux",
       "description": "Automatisez vos tâches répétitives et gagnez des heures chaque semaine. Idéal pour les petites entreprises en quête d'efficacité.",
-      "cta": "Automatiser",
-      "imageAlt": "visualisation de l'automatisation simple des flux de travail numériques"
+      "cta": "Automatiser Maintenant",
+      "badge": "Efficacité",
+      "upgrade": "Flux de travail productifs",
+      "imageAlt": "visualisation de l'automatisation de flux de travail numérique simple",
+      "feature1": "Automatisation des tâches répétitives",
+      "feature2": "Flux d'optimisation des processus",
+      "feature3": "Intégrations d'applications fluides",
+      "feature4": "Gain de temps hebdomadaire précieux"
     },
     "aiAgentAutomation": {
-      "eyebrow": "Agents IA",
+      "eyebrow": "Automatisation par Agents IA",
       "title": "Opérations Intelligentes",
-      "description": "Déployez des agents IA personnalisés pour gérer des tâches complexes, le support client et le traitement des données en toute autonomie.",
-      "cta": "Déployer",
-      "imageAlt": "visualisation d'agents IA avancés au travail"
+      "description": "Déployez des agents IA personnalisés pour gérer des tâches complexes, le support client et le traitement des données de manière autonome.",
+      "cta": "Déployer des Agents",
+      "badge": "Autonome",
+      "upgrade": "Intelligence d'entreprise",
+      "imageAlt": "visualisation d'agents ia avancés au travail",
+      "feature1": "Agents IA autonomes personnalisés",
+      "feature2": "Traitement de données complexes",
+      "feature3": "Automatisation du support 24/7",
+      "feature4": "Priorisation intelligente des tâches"
+    }
+  },
+  "presenceService": {
+    "hero": {
+      "title": "Établissez Votre Autorité.",
+      "subtitle": "Crédibilité Professionnelle, Livrée en 7 Jours.",
+      "description": "Votre site web est votre première impression numérique. Nous ne construisons pas seulement des pages ; nous construisons des passerelles ultra-rapides qui valident votre entreprise dès la première seconde d'interaction."
+    },
+    "comparison": {
+      "title": "L'Écart de Performance",
+      "subtitle": "La vitesse n'est pas seulement une métrique, c'est un déclencheur psychologique. Un site lent tue la confiance.",
+      "competitorLabel": "Concurrent Générique",
+      "competitorStat": "Score de vitesse 45/100",
+      "ourLabel": "Présence Next Level",
+      "ourStat": "Score de vitesse 99/100",
+      "insight": "Les sites performants convertissent 3x plus de visiteurs en prospects fidèles."
+    },
+    "tech": {
+      "title": "Conçu pour l'Edge",
+      "item1": {
+        "title": "Génération de Site Statique (SSG)",
+        "desc": "Zéro latence côté serveur. Votre contenu est pré-rendu pour une livraison instantanée."
+      },
+      "item2": {
+        "title": "Distribution Edge",
+        "desc": "Hébergé sur un CDN mondial, rendant votre site rapide partout sur Terre."
+      },
+      "item3": {
+        "title": "Code SEO Propre",
+        "desc": "L'HTML sémantique et les métadonnées optimisées garantissent que Google adore votre site dès le premier jour."
+      }
+    },
+    "roadmap": {
+      "title": "De Zéro à Héros en 7 Jours",
+      "step1": "Phase 01 : Le Bénéfice Numérique",
+      "step2": "Phase 02 : De vos Vœux à la Réalité",
+      "step3": "Phase 03 : Consultation Virtuelle"
+    },
+    "phases": {
+      "phase1": {
+        "eyebrow": "Étape 1 : Sensibilisation",
+        "title": "Comprendre l'avantage d'avoir un site web",
+        "description": "Avoir un site web pour votre marque n'est pas seulement un accessoire numérique — c'est un atout commercial puissant. Il attire, informe, convainc et convertit. Pour votre entreprise, il peut être l'épine dorsale de votre département marketing — alimentant vos agents avec des prospects, des analyses et des informations clients.",
+        "benefitTitle1": "Visibilité & Portée",
+        "benefitDesc1": "Présence 24/7 : Les clients découvrent votre marque partout. Portée mondiale : Brisez les barrières. Visibilité Google : Trafic organique via le SEO.",
+        "benefitTitle2": "Crédibilité Professionnelle",
+        "benefitDesc2": "Facteur de confiance : Signale la légitimité. Première impression : Premier lieu de vérification. Expertise : Portfolios et témoignages renforcent la confiance.",
+        "benefitTitle3": "Marketing & Croissance",
+        "benefitDesc3": "Génération de leads : Capturez des clients via formulaires. Analyses : Suivez les comportements. Hub de contenu : Positionnez-vous comme autorité.",
+        "benefitTitle4": "Efficacité & Automatisation",
+        "benefitDesc4": "Libre-service : FAQ et réservations. Intégration : Connectez CRM et réseaux sociaux. Évolutivité : Votre site grandit avec votre entreprise.",
+        "benefitTitle5": "Revenus & Conversion",
+        "benefitDesc5": "E-commerce : Vendez directement en ligne. Design persuasif : Convertissez les visiteurs. Coûts réduits : Portée supérieure aux publicités classiques.",
+        "benefitTitle6": "Siège Numérique",
+        "benefitDesc6": "En bref, votre site est votre QG numérique : il attire, informe, convainc et convertit les visiteurs en clients fidèles."
+      },
+      "phase2": {
+        "eyebrow": "Étape 2 : Création",
+        "title": "De vos Vœux à la Réalité",
+        "description": "C'est ici que votre vision prend forme physiquement. Dites-nous exactement ce dont vous rêvez—les couleurs, l'ambiance, les fonctionnalités spécifiques qui rendront votre marque légendaire.",
+        "inputLabel": "Décrivez vos besoins en design...",
+        "inputPlaceholder": "Je souhaite une esthétique minimaliste avec des animations haute performance et un thème sombre...",
+        "submit": "Envoyer Ma Vision"
+      },
+      "phase3": {
+        "eyebrow": "Étape 3 : Connexion",
+        "title": "Consultation Virtuelle",
+        "description": "Nous plongeons au cœur de votre vision grâce à notre entonnoir de stratégie interactif. Ce n'est pas seulement une réunion ; c'est une session d'architecture collaborative où nous alignons vos objectifs avec les dernières possibilités technologiques.",
+        "cta": "Démarrer l'Évaluation ci-dessous"
+      }
+    },
+    "discoveryFunnel": {
+      "title": "Session Stratégique",
+      "steps": {
+        "step1": {
+          "question": "Quel est votre statut numérique actuel ?",
+          "option1": "Je n'ai pas encore de site web",
+          "option2": "J'ai un site web ancien/lent",
+          "option3": "Je lance une nouvelle marque"
+        },
+        "step2": {
+          "question": "Quel est votre objectif principal pour ce site ?",
+          "option1": "Établir une crédibilité professionnelle",
+          "option2": "Générer de nouveaux prospects rapidement",
+          "option3": "Expliquer un produit/service complexe"
+        },
+        "step3": {
+          "question": "Dernière étape : Où devons-nous envoyer votre feuille de route ?",
+          "namePlaceholder": "Votre Nom",
+          "brandPlaceholder": "Nom de l'entreprise ou de la marque",
+          "emailPlaceholder": "Votre Email",
+          "phonePlaceholder": "Numéro de Téléphone",
+          "submit": "Générer Ma Stratégie"
+        }
+      },
+      "success": {
+        "title": "Réservation Confirmée !",
+        "message": "Nous avons réservé votre consultation gratuite. Notre équipe vous contactera bientôt pour finaliser votre feuille de route."
+      }
+    },
+    "footerCta": {
+      "title": "Prêt à Cesser d'Être Invisible ?",
+      "button": "Vérifier la Disponibilité"
     }
   },
   "content": {

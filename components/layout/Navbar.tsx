@@ -27,7 +27,8 @@ import {
   Rocket, 
   Phone,
   MessageSquare,
-  Zap
+  Zap,
+  ArrowRightLeft
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -88,13 +89,13 @@ export default function Navbar() {
                         </div>
                         <div className="h-px bg-border mb-2" />
                         <ul className="space-y-1">
-                          <ListItem href="#services" title={tt('static.title')} icon={CircleDot}>
+                          <ListItem href="/services/presence" title={tt('static.title')} icon={CircleDot}>
                             {tt('static.description')}
                           </ListItem>
-                          <ListItem href="#services" title={tt('standard.title')} icon={Settings}>
+                          <ListItem href="/services/identity" title={tt('standard.title')} icon={Settings}>
                             {tt('standard.description')}
                           </ListItem>
-                          <ListItem href="#services" title={tt('advanced.title')} icon={Rocket}>
+                          <ListItem href="/services/dominance" title={tt('advanced.title')} icon={Rocket}>
                             {tt('advanced.description')}
                           </ListItem>
                         </ul>
@@ -106,14 +107,11 @@ export default function Navbar() {
                         </div>
                         <div className="h-px bg-border mb-2" />
                         <ul className="space-y-1">
-                          <ListItem href="#services" title={tt('static.title')} icon={CircleDot}>
-                            {tt('static.description')}
+                          <ListItem href="/services/app-development" title={ts('appDevelopment.title')} icon={Smartphone}>
+                            {ts('appDevelopment.description')}
                           </ListItem>
-                          <ListItem href="#services" title={tt('standard.title')} icon={Settings}>
-                            {tt('standard.description')}
-                          </ListItem>
-                          <ListItem href="#services" title={tt('advanced.title')} icon={Rocket}>
-                            {tt('advanced.description')}
+                          <ListItem href="/services/migration" title={tt('migration.title')} icon={ArrowRightLeft}>
+                            {tt('migration.description')}
                           </ListItem>
                         </ul>
                       </div>
@@ -124,10 +122,10 @@ export default function Navbar() {
                         </div>
                         <div className="h-px bg-border mb-2" />
                         <ul className="space-y-1">
-                          <ListItem href="#services" title={ts('dataOrganization.title')} icon={Database}>
+                          <ListItem href="/services/data-organization" title={ts('dataOrganization.title')} icon={Database}>
                             {ts('dataOrganization.description')}
                           </ListItem>
-                          <ListItem href="#services" title={ts('analyticsSolutions.title')} icon={BarChart3}>
+                          <ListItem href="/services/analytics" title={ts('analyticsSolutions.title')} icon={BarChart3}>
                             {ts('analyticsSolutions.description')}
                           </ListItem>
                         </ul>
@@ -139,10 +137,10 @@ export default function Navbar() {
                         </div>
                         <div className="h-px bg-border mb-2" />
                         <ul className="space-y-1">
-                          <ListItem href="#services" title={ts('simpleAutomation.title')} icon={CircleDot}>
+                          <ListItem href="/services/simple-automation" title={ts('simpleAutomation.title')} icon={CircleDot}>
                             {ts('simpleAutomation.description')}
                           </ListItem>
-                          <ListItem href="#services" title={ts('aiAgentAutomation.title')} icon={Bot}>
+                          <ListItem href="/services/ai-automation" title={ts('aiAgentAutomation.title')} icon={Bot}>
                             {ts('aiAgentAutomation.description')}
                           </ListItem>
                         </ul>
@@ -154,10 +152,10 @@ export default function Navbar() {
                         </div>
                         <div className="h-px bg-border mb-2" />
                         <ul className="space-y-1">
-                          <ListItem href="#services" title={ts('marketingAI.title')} icon={Bot}>
+                          <ListItem href="/services/ai-marketing" title={ts('marketingAI.title')} icon={Bot}>
                             {ts('marketingAI.description')}
                           </ListItem>
-                          <ListItem href="#services" title={ts('marketingHuman.title')} icon={Megaphone}>
+                          <ListItem href="/services/human-marketing" title={ts('marketingHuman.title')} icon={Megaphone}>
                             {ts('marketingHuman.description')}
                           </ListItem>
                         </ul>
@@ -223,13 +221,13 @@ export default function Navbar() {
 }
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a"> & { icon?: React.ComponentType<{ className?: string }> }
+  React.ElementRef<typeof Link>,
+  React.ComponentPropsWithoutRef<typeof Link> & { title: string; icon?: React.ComponentType<{ className?: string }> }
 >(({ className, title, children, icon: Icon, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -244,9 +242,10 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   )
 })
 ListItem.displayName = "ListItem"
+
